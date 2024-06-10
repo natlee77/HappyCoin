@@ -1,0 +1,40 @@
+.navbar{
+    background-color: rgb(18, 11, 75) !important;
+    display: flex;
+    justify-content: flex ;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1em;
+    border-bottom:   1px solid rgb(53, 146, 124) !important;   
+    position: relative;
+    z-index: 1;
+    display: flex;
+     
+}
+  .navbar-toggler   {
+   border: none;
+  }  
+  
+.navbar a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: rgb(227, 145, 216);
+  }
+  .nav-link:hover  {
+    color: rgb(145, 227, 157) !important;
+    filter: drop-shadow(1em 1em 2em #646cffaa);
+  }
+  
+.logo img{
+    height: 6em;
+    border-radius: 0.4rem; 
+    
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  } 
+  .navbar-toggler-icon {
+    margin-left: 5em;
+    width: 2.5em;
+    height: 2.5em;
+  }

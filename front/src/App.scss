@@ -1,0 +1,192 @@
+@import "./css/blocks.scss";
+@import "css/contact.scss";
+@import "css/nav.scss";
+@import "css/home.scss";
+
+*{
+  box-sizing: border-box;
+}
+ 
+h1{
+  font-size: 2rem !important; 
+  font-weight: bold;
+  color: rgba(0, 170, 255, 0.891); 
+} 
+#root{
+  height: 100vh;
+  width: 100vw;
+}
+body {
+  width: auto;
+  height: 100%;
+  margin: 0 ;
+  text-align: center;
+  background-color: rgba(29, 24, 55, 0.9);
+  color: rgb(201, 153, 195);
+  font-size: 1.5em;
+}
+ 
+.layout{
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+   
+  height: 100%;
+  width: auto ;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  text-align: center;
+  // background-color: rgb(22, 14, 31);
+  color: rgb(201, 153, 195);
+  align-self: center;
+
+  position: relative;
+} 
+
+// .web3{
+  
+//   position: absolute;
+//   right: 30%;
+//   top:  5px;
+//   z-index: 2;
+//   display: flex;
+//   flex-direction: row; 
+// }
+
+.info{
+  margin-top:   10px;
+  text-align: start;
+  font-size: 0.8rem;
+}
+
+.buttons{
+  display: flex;
+  justify-content: start;
+}
+
+#loader{
+  border: 2px solid grey;
+  height: auto;
+  width: 50px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  visibility:hidden;
+
+  background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3JvcXN5ZnZvZDJuOTRzbmd3OXhlbXZvZGMzdmc4bnZ1cTA2dGU4NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/17mNCcKU1mJlrbXodo/giphy.gif');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.btn-mm{
+  width: 60%;
+  border: 2px solid grey;
+  border-radius: 10px;
+  padding: 10px;
+
+  background-color: purple;
+  cursor: pointer;
+
+}
+.btn-mm:hover{
+  background-color: rgb(190, 150, 190);
+}
+.mm-msg{
+  margin : 10px;
+  font-size: 1.5rem;
+} 
+.booking,
+.admin,
+.contact {
+  height: 90%;
+  margin: 10px 10px;
+}
+
+.error{
+  padding: 10px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  position: absolute;
+  top: 10%;
+  bottom:40%;
+  right:20%;
+  left: 20%; 
+  z-index: 2;
+ border-radius: 0.5rem;
+  background-color: rgba(0, 225, 255, 0.891);
+}
+.error > p {
+  margin: 10px;
+  color: black;
+  font-size: 1.5rem;
+}
+
+footer{  
+  height: 40px; 
+  display: flex; 
+  align-items: center;
+  background-color: rgb(18, 11, 75) !important;
+  border-top:  1px solid rgb(69, 127, 114) !important;
+ 
+  left: 0 ; right: 0; bottom: 0; 
+  height:[footer-height] 
+}
+footer > p{
+  padding: 10px 10px;
+  color: rgb(201, 153, 195);
+  font-size: 1.5rem;
+}
+ 
+  /* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) { 
+  .val  {
+    display: flex;
+    flex-direction: column;
+  } 
+ .container  {
+  width: 100%;
+  height: auto;
+  margin: 0 !important;
+  padding: 0!important;
+ }
+ .navbar{ 
+  gap: 1em;
+  justify-content: space-between;
+  padding: 0  ; 
+  padding-bottom: 2rem;
+}
+ 
+.navbar-toggler-icon { 
+    margin-left: 0;
+}
+}
+
+  /* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) { 
+  .val  {
+    display: flex;
+    flex-direction: column;
+  } 
+  .container  {
+    width: 100%;
+    margin-right: auto !important;
+    margin-left: auto !important;
+   }
+   
+ }
+
+  /* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+   
+ }
+
+  /* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+
+ }
