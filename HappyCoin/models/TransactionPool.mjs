@@ -10,10 +10,12 @@
      this.transactionMap[transaction.id] = transaction;
    }
 
-   //________clear transaction from pool___________
+   //________clear all transaction from pool without controll if they moved to blockchain___________
    clear() {
      this.transactionMap = {};
    }
+
+   //__________clear transaction from transactionPool that moved to blockchain
    clearBlockTransactions({ chain }) {
     // ____lopp through chain
     for (let i = 1; i < chain.length; i++) {

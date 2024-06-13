@@ -19,7 +19,7 @@ export default class Blockchain {
   replaceChain(chain, onSuccess) {
     if (chain.length <= this.chain.length) return;
     if (!Blockchain.validateChain(chain)) return;
-    //transactionPool.clear() and sync with blockchain
+    //transactionPool clearBlockTransactions() and sync with blockchain
     if (onSuccess) callback();
 
     this.chain = chain;

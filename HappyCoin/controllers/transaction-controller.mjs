@@ -47,12 +47,10 @@ export const mineTransactions = (req, res, next) => {
       wallet, 
       pubnub: pubnubServer,
     });
-  console.log('-------------', miner );
+  console.log('--------miner-----', miner );
   
     miner.mine(); 
     
-    // fetch(`${ROOT_NODE}/api/v1/blockchain`);
-  
     res.status(200).json({
       success: true,
       statusCode: 200,

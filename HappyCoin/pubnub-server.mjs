@@ -44,10 +44,12 @@ export default class PubNubServer {
         
         switch (channel) {
           case CHANNELS.BLOCKCHAIN:
-            this.blockchain.replaceChain(msg, () => {
-              this.transactionPool.clearBlockTransactions({ chain: msg });
-            });
-            // this.transactionPool.clearBlockTransactions({ chain: msg });
+            this.blockchain.replaceChain(
+              msg, 
+              //callback() in replaceChain-onSuccess
+              () => {this.transactionPool.clearBlockTransactions({ chain: msg });}
+            );
+            //  this.blockchain.replaceChain(msg).then(this.transactionPool.clearBlockTransactions({ chain: msg }));
             break;
           case CHANNELS.TRANSACTION:
             if(  !this.transactionPool.transactionExist({

@@ -1,7 +1,9 @@
-import { it, describe, expect, beforeEach } from 'vitest';
+import { it, describe, expect, beforeEach, vi } from 'vitest';
 import Wallet from '../models/Wallet.mjs';
 import { verifySignature } from '../utilities/crypto-lib.mjs';
 import Transaction from '../models/Transaction.mjs';
+import { INITIAL_BALANCE } from '../config/settings.mjs';
+import Blockchain from '../models/Blockchain.mjs';
 
 describe('Wallet', () => {
   let wallet;
@@ -44,7 +46,7 @@ describe('Wallet', () => {
       ).toBe(false);
     });
   });
-  //__________________________
+  
   describe('Create transaction', () => {
     describe('and the amount is larger than the balance', () => {
       it('should throw an error', () => {
@@ -76,4 +78,56 @@ describe('Wallet', () => {
       });
     });
   });
+
+
+  describe('Balance', () => {
+    let blockchain;
+    beforeEach(() => {
+      blockchain = new Blockchain();
+    });
+
+//case 1
+    describe('should check transactions in output for the wallet', () => {
+
+      it('should return initial balance for the wallet', () => {
+        expect(Wallet.calculateBalance({
+              chain: blockchain.chain, 
+              address: wallet.publicKey}))
+            .toEqual(INITIAL_BALANCE);
+      });
+
+
+
+    });
+//case 2
+    describe('should check chenges in output/transactions for the wallet', () => {
+      //simulate 2 transactions   
+      let transaction1, transaction2;
+      beforeEach(() => {
+        transaction1 = new Wallet().createTransaction({ recipient: wallet.publicKey,
+           amount: 5 });
+        transaction2 = new Wallet().createTransaction({ recipient: wallet.publicKey, 
+          amount: 10 });
+        blockchain.addBlock({ data: [transaction1, transaction2] });
+      });
+
+      it('should return the sum of all outputs(transactions) for the wallet', () => {
+        expect(Wallet.calculateBalance({
+              chain: blockchain.chain, 
+              address: wallet.publicKey})
+        ).toEqual(
+          INITIAL_BALANCE 
+          +
+          transaction1.outputMap[wallet.publicKey]  +
+          transaction2.outputMap[wallet.publicKey] 
+        );//1015
+      });
+
+
+      
+
+    });
+
+  });
+
 });
