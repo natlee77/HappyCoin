@@ -30,6 +30,7 @@ export default class PubNubServer {
       message: JSON.stringify(transaction),
     });
   }
+
   listener() {
     return {
       message: (msgObject) => {
@@ -50,6 +51,7 @@ export default class PubNubServer {
         switch (channel) {
           case CHANNELS.BLOCKCHAIN:
             this.blockchain.replaceChain(msg);
+            this.transactionPool.clearBlockTransactions({ chain: msg });
             break;
           case CHANNELS.TRANSACTION:
             if(  !this.transactionPool.transactionExist({

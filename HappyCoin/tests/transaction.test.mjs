@@ -2,6 +2,7 @@ import {it, describe, expect,  beforeEach} from 'vitest';
 import Wallet from  '../models/Wallet.mjs';
 import Transaction from '../models/Transaction.mjs';
 import { createHash, verifySignature} from  '../utilities/crypto-lib.mjs';
+import { MINING_REWARD_ADRESS, MINING_REWARD } from '../config/settings.mjs';
 
 describe('Transaction', () => {
   let transaction, sender, recipient, amount;
@@ -148,6 +149,23 @@ describe('Transaction', () => {
         expect(transaction.inputMap.signature).not.toEqual(orgSignature);
       });
     
+    });
+  });
+  //_______________________________________
+  describe(' Transaction reward', () => {
+    let rewardTransaction , miner;    
+    
+    beforeEach(() => {
+      miner = new Wallet();
+      rewardTransaction = Transaction.TransactionReward({ miner });      
+    });
+
+    it('should create a reward transaction with adress of the miner', () => {
+       expect(rewardTransaction.inputMap).toEqual(MINING_REWARD_ADRESS);
+    });
+
+    it('should create only (One)  reward transaction ', () => {
+      expect(rewardTransaction.outputMap[miner.publicKey]).toEqual(MINING_REWARD);
     });
   });
 });

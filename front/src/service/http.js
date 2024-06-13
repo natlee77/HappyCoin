@@ -28,7 +28,7 @@ async get(resourse) {
       }
     }
 //metod post
-async add( obj) {   
+async add(obj) {   
   console.log('block in add()',obj);  
   try {
       const response = await fetch(this.#url , {

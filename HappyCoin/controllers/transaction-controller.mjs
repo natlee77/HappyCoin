@@ -1,7 +1,9 @@
-import { transactionPool} from "../server.mjs";
-import { wallet} from "../server.mjs";
-import { pubnubServer} from "../server.mjs";
- 
+import { transactionPool } from '../server.mjs';
+import { wallet } from '../server.mjs';
+import { blockchain } from '../server.mjs';
+import  Miner from '../models/Miner.mjs';
+import { pubnubServer } from '../server.mjs';
+  
 //________logic --> add , get
 export const addTransaction = (req, res, next) => {
     const { recipient,amount } = req.body;
@@ -36,3 +38,24 @@ export const getTransactionPool = (req, res, next) => {
 
 
 }
+
+
+export const mineTransactions = (req, res, next) => {
+    const miner  = new Miner({
+      blockchain,
+      transactionPool,
+      wallet, 
+      pubnub: pubnubServer,
+    });
+  console.log('-------------', miner );
+  
+    miner.mine(); 
+    
+  
+    res.status(200).json({
+      success: true,
+      statusCode: 200,
+      data: ' Transaction mined successfully',
+    });
+  };
+  
