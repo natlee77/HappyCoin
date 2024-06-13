@@ -41,17 +41,13 @@ export default class PubNubServer {
           `Meddelande mottagits på kanal__________: ${channel}, meddelande: ${message}`
         );
 
-        // if (channel === CHANNELS.BLOCKCHAIN) {
-        //   this.blockchain.replaceChain(msg);
-        // }
-
-        // if (channel === CHANNELS.TRANSACTION) {
-        //   this.transactionPool.addTransaction( msg);
-        // }
+        
         switch (channel) {
           case CHANNELS.BLOCKCHAIN:
-            this.blockchain.replaceChain(msg);
-            this.transactionPool.clearBlockTransactions({ chain: msg });
+            this.blockchain.replaceChain(msg, () => {
+              this.transactionPool.clearBlockTransactions({ chain: msg });
+            });
+            // this.transactionPool.clearBlockTransactions({ chain: msg });
             break;
           case CHANNELS.TRANSACTION:
             if(  !this.transactionPool.transactionExist({

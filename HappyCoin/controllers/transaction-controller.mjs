@@ -51,6 +51,7 @@ export const mineTransactions = (req, res, next) => {
   
     miner.mine(); 
     
+    // fetch(`${ROOT_NODE}/api/v1/blockchain`);
   
     res.status(200).json({
       success: true,

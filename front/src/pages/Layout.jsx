@@ -8,7 +8,7 @@ const Layout = () => {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark  sticky-top  row">
           <a className="navbar-brand col-sm" href="/">
             <div className="logo">
-              <img src="src/assets/android-chrome-192x192.png" alt="SurfCoin logo" /> {"SurfCoin"}  
+              <img src="src/assets/android-chrome-192x192.png" alt="HappyCoin logo" /> {"HappyCoin"}  
             </div>
           </a>
           <button
@@ -24,12 +24,12 @@ const Layout = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-                <NavLink className={'nav-item nav-link'} to={"/"}>Home</NavLink>
-               
-                <NavLink className={'nav-item nav-link'}  to={"/blockchain"}>BlockChain</NavLink>
-                <NavLink className={'nav-item nav-link'} to={"/addblock"}>Add Block</NavLink>
-
+                <NavLink className={'nav-item nav-link'} to={"/"}>Home</NavLink>               
+                <NavLink className={'nav-item nav-link'}  to={"/blockchain"}>BlockChain</NavLink>              
+                <NavLink className={'nav-item nav-link'}  to={"/send"}>Send Coint</NavLink>
                 <NavLink className={'nav-item nav-link'}  to={"/contact"}>Contact</NavLink>
+                <NavLink className={'nav-item nav-link'} to={"/mine"}>MineBlock </NavLink>
+
             </div>
           </div>
  
@@ -40,7 +40,7 @@ const Layout = () => {
         <Outlet />
       </main>
       <footer className="footer">
-        <p>&copy; 2024 SurfCoin</p>
+        <p>&copy; 2024 HappyCoin</p>
       </footer>
     </div>
   );

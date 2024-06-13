@@ -7,7 +7,8 @@ import Contact from "./pages/Contact";
 import BlockChain from "./pages/BlockChain";
 import Layout from "./pages/Layout";
 import NotFound from "./pages/NotFound";
-import AddBlock  from  "./pages/AddBlock";
+import MineBlock  from  "./pages/MineBlock";
+import SendCoint from "./pages/SendCoint";
 
 export const router = createBrowserRouter([{
   path: "/",
@@ -26,8 +27,12 @@ export const router = createBrowserRouter([{
       element: < BlockChain / > ,
     },
     {
-      path: "/addblock",
-      element: < AddBlock / > ,
+      path: "/mine",
+      element: < MineBlock / > ,
+    },
+    {
+      path: "/send",
+      element: < SendCoint / > ,
     },
     
   ],

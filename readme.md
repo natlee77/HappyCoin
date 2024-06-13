@@ -1,8 +1,9 @@
  
 
-A complete blockchain for my own cryptocurrency with transaction management and validation of the transactions.
-      I use a transaction pool to manage transactions before they are placed in a block.
-      When a block is created for the transactions, a "reward transaction" is also created and tracked in the transaction pool.       The transactions are validated.
+A complete blockchain for my own cryptocurrency 'Happycoin' with transaction management and validation of the transactions.
+ - I use a transaction pool to manage transactions before they are placed in a block.
+ - When a block is created for the transactions, a "reward transaction" is also created and tracked in the transaction pool.    
+ - The transactions are validated.
 ###  _______Network
 - It starts up several nodes with the blockchain. 
 - Synchronization of the blockchain takes place when starting a new node, when adding transactions and when a block is created.
@@ -16,13 +17,12 @@ A complete blockchain for my own cryptocurrency with transaction management and 
    -> and to be able to list their own transactions and blocks. 
 - Users must be stored in a mongodb document.
 ### _______Client App
-A client is developed in an application with HTML and CSS
+A client is developed in an application with HTML and CSS:
 - React with Vite
-- or a pure JavaScript.
+
 The client application can create:
 - new transactions,
-- list transactions
-- and list blocks.
+- list transactions  and list blocks.
 - it is possible to create a block of transactions, i.e. "mine" of blocks.
 
 #### _______Passed Requirement (Good)

@@ -9,7 +9,7 @@ const BlockChain = () => {
         listBlockchain();
          setBlockchain  ( blockchain ); 
          setTransactions(transactions);
-      }, [  blockchain, transactions ]);
+      }, [   ]);
  
  
     const listBlockchain = async () => {
@@ -17,10 +17,10 @@ const BlockChain = () => {
         const http = new HttpClient();
         const result = await http.get('api/v1/blockchain');
         //http://localhost:5001/api/v1/blockchain
-        console.log(result );
+        console.log(result.data );
 
-        setBlockchain(result.data.data);
-        setTransactions(result.data.pendingTransactions);
+        setBlockchain(result.data );
+       setTransactions(result.data.data);
 
       } catch (error) {
         throw new Error
@@ -46,11 +46,11 @@ const BlockChain = () => {
        
              <div> data : {block.data.map((data) => {return ( 
               <div className="data-container"  >
-              <p> productName : {data.productName } </p> 
+              {/* <p> productName : {data.productName } </p>  */}
               </div>
             )})  }</div>  
 
-            <div> transactions :
+            {/* <div> transactions :
             {transactions.map((tr) => {return ( 
               <div className="data-container" key={tr.transactionId}>
               <p>amount : {tr.amount} </p>
@@ -58,7 +58,9 @@ const BlockChain = () => {
               <p>recipient : {tr.recipient} </p>
               <p>  transactionId : {tr.transactionId }   </p>
               </div>
-            )})  }</div>  
+            )})  }</div>   */}
+
+
             <p> nonce : {block.nonce}</p>
             <p> difficulty : {block.difficulty}</p>
            
@@ -70,7 +72,7 @@ const BlockChain = () => {
     )} 
     </div>
 {/*  --------- -------------- */}
-  <div className="transactions blockchain container">
+  {/* <div className="transactions blockchain container">
     <h1 >  Pending Transactions : </h1>
            {transactions.map((tr) => {return ( 
               <div className="data-container" key={tr.transactionId}>
@@ -80,7 +82,7 @@ const BlockChain = () => {
               <p>  transactionId : {tr.transactionId }   </p>
               </div>
             )})  }
-  </div>  
+  </div>   */}
 
      
       </>  

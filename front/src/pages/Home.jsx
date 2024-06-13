@@ -3,7 +3,7 @@ const Home = () => {
   return (
     <>
         {
-           <img src="src/assets/surf.avif " alt="surf coin"  className="image__home  lazyloaded"  /> 
+           <img src="src/assets/coin.webp " alt="happy coin"  className="image__home  lazyloaded"  /> 
            
           
                     

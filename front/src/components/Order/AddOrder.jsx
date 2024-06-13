@@ -61,7 +61,7 @@ import Error from "../Tools/Error";
          <Recipient updateRecipient = {setRecipient} />   
 
          </div> 
-         <h1 > Information that you adding to transaction </h1> 
+         <h1 > Check Information that you adding to transaction </h1> 
          <div className = "data-container" >
          <p > amount :{JSON.stringify(amount)} </p> 
          <p > sender : {JSON.stringify(sender)} </p> 

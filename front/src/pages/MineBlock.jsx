@@ -2,11 +2,11 @@
 import AddOrder from "../components/Order/AddOrder";
  
 
-  const AddBlock = () => { 
+  const MineBlock = () => { 
    return (
    <>
    <div>
-       <h1>Add Data to Block</h1>
+       <h1>Mine Block</h1>
         <AddOrder />
    </div>
     
@@ -14,4 +14,4 @@ import AddOrder from "../components/Order/AddOrder";
    );
   };
 
-  export default AddBlock;
+  export default MineBlock;
