@@ -3,6 +3,7 @@ import {
     getTransactionPool,
     addTransaction,
     mineTransactions,
+    getWalletBalance,
 } from '../controllers/transaction-controller.mjs';
 
 const router = express.Router();
@@ -15,6 +16,9 @@ router.route('/transaction')
 
 router.route('/mine')
     .get(mineTransactions)
+
+router.route('/balance')  
+    .get(getWalletBalance)  
 
 
 export default router

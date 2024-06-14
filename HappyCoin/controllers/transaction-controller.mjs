@@ -3,6 +3,7 @@ import { wallet } from '../server.mjs';
 import { blockchain } from '../server.mjs';
 import  Miner from '../models/Miner.mjs';
 import { pubnubServer } from '../server.mjs';
+import Wallet from '../models/Wallet.mjs';
   
 //________logic --> add , get
 export const addTransaction = (req, res, next) => {
@@ -27,6 +28,25 @@ export const addTransaction = (req, res, next) => {
     res.status(201)
     .json({success: true,statusCode: 201,data: transaction});
 };
+
+export const getWalletBalance = (req, res, next) => {
+    //wallet-address, calculate balance  
+    const adress = wallet.publicKey;  
+    const balance = Wallet.calculateBalance({
+        chain: blockchain ,
+        adress ,
+    });
+
+
+    res
+        .status(200)
+        .json({ 
+            success: true, 
+            statusCode: 200, 
+            data: { adress: adress, 
+                    balance : balance} });
+
+}
 
 export const getTransactionPool = (req, res, next) => {
 
