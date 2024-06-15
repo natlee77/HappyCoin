@@ -12,7 +12,7 @@ import PubNubServer from './pubnub-server.mjs';
 
 
 dotenv.config({ path: './config/config.env' });
-//all the keys are in .env  --gitignore
+//all keys are in .env  --gitignore
 const credentials = {
   publishKey: process.env.PUBLISH_KEY,
   subscribeKey: process.env.SUBSCRIBE_KEY,

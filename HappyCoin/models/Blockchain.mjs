@@ -1,5 +1,7 @@
 import { createHash } from '../utilities/crypto-lib.mjs';
 import Block from './Block.mjs';
+import Transaction from './Transaction.mjs';
+import { MINING_REWARD, MINING_REWARD_ADRESS } from '../config/settings.mjs';
 
 export default class Blockchain {
   constructor() {
@@ -16,14 +18,53 @@ export default class Blockchain {
     return newBlock;
   }
 
-  replaceChain(chain, onSuccess) {
+  replaceChain(chain, shouldValidate, onSuccess) {
     if (chain.length <= this.chain.length) return;
     if (!Blockchain.validateChain(chain)) return;
-    //transactionPool clearBlockTransactions() and sync with blockchain
-    if (onSuccess) callback();
+   
+   //"shouldValidate" flag is true by default
+    if (shouldValidate && !this.validateTransactionData({ chain })) {
+      console.log('Invalid transaction data in chain');
+      return;
+    }
+     //transactionPool clearBlockTransactions() and sync with blockchain
+     if (onSuccess) callback();
 
     this.chain = chain;
   }
+
+  validateTransactionData({ chain }) {
+    // Loop through each block in chain
+    for (let i = 1; i < chain.length; i++) {
+      const block = chain[i];
+      const transactionSet = new Set();
+      let count = 0;
+      // Loop through each transaction in block      
+      for (let transaction of block.data) {
+        //validate mining reward
+        if (transaction.inputMap.address === MINING_REWARD_ADRESS.adress){
+          count ++;
+          if(count > 1) return false;
+          // last outputMap {} does not contain mining reward  
+          if(Object.values(transaction.outputMap)[0] !== MINING_REWARD) 
+            return false;
+        }else{
+        // Validate transaction
+        if (!Transaction.validate(transaction)){
+          return false;
+        }  
+        //  check for same transaction 
+        if (transactionSet.has(transaction)) {
+          return false;
+        } else {
+          transactionSet.add(transaction); 
+        }
+        }
+      } 
+    }
+    return true;
+  }
+ 
 
   // Static methods...
   // Concensus
