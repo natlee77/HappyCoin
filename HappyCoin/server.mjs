@@ -1,10 +1,11 @@
 import express from 'express';
-import  dotenv  from 'dotenv';
+import dotenv  from 'dotenv';
 import Blockchain from './models/Blockchain.mjs';
 import TransactionPool from './models/TransactionPool.mjs';
 import Wallet from './models/Wallet.mjs';
 import cors from 'cors';
 
+import authRouter from './routes/auth-routes.mjs';
 import blockRouter from './routes/block-routes.mjs';
 import blockchainRouter from './routes/blockchain-routes.mjs';
 import transactionRouter from './routes/transaction-routes.mjs';
@@ -32,10 +33,11 @@ export const pubnubServer = new PubNubServer(
   });
 
 const app = express();
+//middlewares
 app.use(express.json());
 app.use(cors());
 
-const DEFAULT_PORT = 5001;
+const DEFAULT_PORT = +process.env.PORT  ||5010 ;
 const ROOT_NODE = `http://localhost:${DEFAULT_PORT}`;
 
 let NODE_PORT;
@@ -47,6 +49,7 @@ setTimeout(() => {
 app.use('/api/v1/blockchain', blockchainRouter);
 app.use('/api/v1/block', blockRouter);
 app.use('/api/v1/wallet', transactionRouter);
+app.use('/api/v1/auth', authRouter);
 
 //synchronize blockchain
 const synchronize = async () => {
@@ -69,7 +72,9 @@ if (process.env.GENERATE_NODE_PORT === 'true') {
 }
 
 const PORT = NODE_PORT || DEFAULT_PORT;
+console.log('NODE_PORT:_________ ', NODE_PORT);
 
+//start server
 app.listen(PORT, () => {
   console.log(`Server is running on port___________: ${PORT}`);
 //synchronize blockchain if port is not 5001

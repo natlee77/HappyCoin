@@ -9,6 +9,8 @@ import Layout from "./pages/Layout";
 import NotFound from "./pages/NotFound";
 import MineBlock  from  "./pages/MineBlock";
 import SendCoint from "./pages/SendCoint";
+import Login from "./pages/Login";
+import NewUser from "./components/User/NewUser";
 
 export const router = createBrowserRouter([{
   path: "/",
@@ -34,6 +36,14 @@ export const router = createBrowserRouter([{
       path: "/send",
       element: < SendCoint / > ,
     },
+    {
+      path: "/login",
+      element: <  Login / > ,
+    },
+    {
+      path: "/register",
+      element: < NewUser / > ,
+    }
     
   ],
 }, ]);

@@ -29,7 +29,7 @@ async get(resourse) {
     }
 //metod post
 async add(obj) {   
-  console.log('block in add()',obj);  
+  console.log(' added_______ ',obj);  
   try {
       const response = await fetch(this.#url , {
         //post metod--create packet

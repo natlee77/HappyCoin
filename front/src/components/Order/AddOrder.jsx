@@ -15,7 +15,7 @@ import Error from "../Tools/Error";
      const [transaction , setTransaction] = useState({  new : Transaction }); 
    
     
-     const createOrder = async (e) => {
+  const createOrder = async (e) => {
          e.preventDefault()
         
       //  create new object(transaction)
@@ -36,14 +36,16 @@ import Error from "../Tools/Error";
         setError(check)
       }
      };
-     async function saveTransaction(obj) {
+     //send transaction to blockchain
+    async function saveTransaction(obj) {
         const url = 'http://localhost:5001/api/v1/transactions/transaction';
         const http = new HttpClient(url);
         await http.add(obj);
         // redirect
         location.href = './blockchain'
       }
-      const toggleError = () => {
+      //error
+    const toggleError = () => {
         setError(null)
       }
      return ( 
@@ -73,8 +75,9 @@ import Error from "../Tools/Error";
          <button className = "button btn"
          onClick = {
              e => createOrder(e)
-         } > Submit </button> </div> </form>
-        
+         } > Submit </button>
+         </div> 
+         </form>        
          </>
      );
  };

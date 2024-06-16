@@ -29,6 +29,7 @@ const Layout = () => {
                 <NavLink className={'nav-item nav-link'}  to={"/send"}>Send Coint</NavLink>
                 <NavLink className={'nav-item nav-link'}  to={"/contact"}>Contact</NavLink>
                 <NavLink className={'nav-item nav-link'} to={"/mine"}>MineBlock </NavLink>
+                <NavLink className={'nav-item nav-link'} to={"/login"}>Login </NavLink>
 
             </div>
           </div>
