@@ -11,8 +11,18 @@ import blockchainRouter from './routes/blockchain-routes.mjs';
 import transactionRouter from './routes/transaction-routes.mjs';
 import PubNubServer from './pubnub-server.mjs';
 
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config({ path: './config/config.env' });
+
+// global _appdir for jsonDB ===__dirname(commonJs)
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
+global._appdir = dirname;
+console.log('global._appdir______',global._appdir);
+
+ 
 //all keys are in .env  --gitignore
 const credentials = {
   publishKey: process.env.PUBLISH_KEY,
@@ -32,6 +42,7 @@ export const pubnubServer = new PubNubServer(
     credentials:  credentials  
   });
 
+ //Json DB
 const app = express();
 //middlewares
 app.use(express.json());

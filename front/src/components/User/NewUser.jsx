@@ -27,8 +27,8 @@ const createUser = async (e) => {
  //  create new object(transaction)
 const newUser = new User(
         name,
+        email,          
         password,
-        email,  
        );  
     
 const check = newUser.getValidation()        
@@ -69,16 +69,11 @@ const toggleError = () => {
               <Name updateName={setName} />
               <Password updatePassword={setPassword}  />
               <Email updateEmail={setEmail} />
-              
-              </div>            
+            </div>            
                
-              <button
-                className="btn"
-                type="submit" onClick = {
-             e => createUser(e)
-         }>
-                 Registrate new User
-              </button>
+            <button  className="btn" type="submit" onClick = {
+             e => createUser(e)}>Registrate new User</button>
+
             </form>
           </section>
   

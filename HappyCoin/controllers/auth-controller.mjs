@@ -1,10 +1,11 @@
 //JSDoc.app 
 import User from "../models/User.mjs";
+import { saveUser } from "../data/fileDb.mjs";
 
 //@desc   registrete user
 //@route  POST /api/v1/auth/register
 //@access Public
-export const register = (req, res, next) => {
+export const register =  async (req, res, next) => {
     //should create a new user (name, email, password,role in system)    
     const{ name, email, password, role} = req.body;
     //validation
@@ -18,6 +19,8 @@ export const register = (req, res, next) => {
     // create a new user    
     const  user = new User({ name, email, password,  role :  role ?? 'user'});  
     // save user to database
+     
+    await saveUser( user );
     
     
     res
