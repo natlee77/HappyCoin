@@ -1,4 +1,15 @@
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+
+export const generateToken = (id) => {
+   //3 del
+    return jwt.sign(
+        { id }, 
+        process.env.JWT_SECRET, 
+        { expiresIn:  process.env.JWT_TTL }
+    );
+    
+}
 
 
 export const hashPassword = (password) => {

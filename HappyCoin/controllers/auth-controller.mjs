@@ -1,6 +1,7 @@
 //JSDoc.app 
 import User from "../models/User.mjs";
 import { saveUser } from "../data/fileDb.mjs";
+import { generateToken } from "../utilities/security.mjs";
 
 //@desc   registrete user
 //@route  POST /api/v1/auth/register
@@ -21,11 +22,10 @@ export const register =  async (req, res, next) => {
     // save user to database
      
     await saveUser( user );
-    
-    
-    res
-        .status(201)
-        .json({ success: true, statusCode: 201,  data : user});
+
+    // send responseJW
+    createAndSendToken(user.id, 201, res);
+     
 };
 
 
@@ -65,4 +65,26 @@ export const getMe = (req, res, next) => {
  
 export const logout = (req, res, next) => {
     res.send('logout');
+}
+
+
+
+//helper function
+const createAndSendToken = (userId, statusCode, res) => {
+    // create token
+    const token =  generateToken(userId);
+    console.log('token:___________ ', token);
+    
+    //set
+    const  options = {
+        expires: new Date(
+            Date.now() + process.env.JWT_COOKIE_TTL  * 24 * 60 * 60 * 1000//HOURS * MINUTES * SECONDS * MILLISECONDS
+        ),
+        httpOnly: true  
+    }
+    // send response JWT 
+    res
+        .status(statusCode)
+        .cookie('token', token, options)
+        .json({ success: true,statusCode: 201,    token   });
 }
