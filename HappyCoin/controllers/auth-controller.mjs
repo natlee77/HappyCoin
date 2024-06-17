@@ -1,7 +1,8 @@
 //JSDoc.app 
 import User from "../models/User.mjs";
-import { saveUser } from "../data/fileDb.mjs";
-import { generateToken } from "../utilities/security.mjs";
+import { saveUser, findUserByEmail, findUserById } from "../data/fileDb.mjs";
+import { generateToken, matchPassword } from "../utilities/security.mjs";
+ 
 
 //@desc   registrete user
 //@route  POST /api/v1/auth/register
@@ -29,20 +30,55 @@ export const register =  async (req, res, next) => {
 };
 
 
-
-
 // @desc   logga in
 // @route  POST /api/v1/auth/login
 // @access Public
-export const login = (req, res, next) => {
-    
-    console.log('login________________',req.body);
-    res
-        .status(201)
-        .json({ success: true,statusCode: 201, message: 'logat in :))' });
-    
-}
+export const login = async (req, res, next) => {
+    // validate email and password
+     const { email, password } = req.body;
+     if (!email || !password) {
+        return res .status(400) .json({ success: false,
+                    statusCode: 400, 
+                    message: `missing required fields ${email}, ${password}`});  
+    }
+    //taken user  from DB
 
+    try {
+    const user =  await findUserByEmail( email );   
+    
+    // validation password
+    const isMatch = await matchPassword(password , user.password);  
+    if (!isMatch) {
+        return res.status(401).json({
+            success: false,
+            statusCode: 401,
+            message: 'Wrong    password',
+        })  
+    }
+
+    // generate and send  new token
+    createAndSendToken(user.id, 200, res);      
+
+   //   email validation  
+    if (!user) {
+        return res.status(401).json({
+            success: false, 
+            statusCode: 401,
+            message: 'User not found',
+        })  
+    }   
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false, 
+            statusCode: 500,
+            message: error.message,
+        })  
+    }
+
+
+
+}
 
 // @desc  return logat in  user-info  
 // @route  POST /api/v1/auth/me 
@@ -58,7 +94,7 @@ export const getMe = (req, res, next) => {
 
 
 
- 
+
 // @desc   logga ut
 // @route  POST /api/v1/auth/logut
 // @access Public
