@@ -83,12 +83,30 @@ export const login = async (req, res, next) => {
 // @desc  return logat in  user-info  
 // @route  POST /api/v1/auth/me 
 // @access Public
-
-export const getMe = (req, res, next) => {
-    console.log(' getMe________________',req.body);
+///?????????????????????????????????
+export const getMe = async (req, res, next) => {
+    
+    try {
+        const user =await findUserById(req.id);
+         
     res
-       .status(201)
-       .json({ success: true,statusCode: 201, message: ' getMe :))' });
+    .status(200)
+    .json({ success: true,statusCode: 200, message: ' getMe :))' , data: user});
+        if (!user) {
+            return res.status(401).json({
+                success: false, 
+                statusCode: 401,
+                message: 'User not found by id',
+            })  
+        }  
+    } catch (error) {
+        return res.status(500).json({
+            success: false, 
+            statusCode: 500,
+            message: error.message,
+        })  
+    }   
+   
 }
 
 
