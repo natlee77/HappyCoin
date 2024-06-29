@@ -3,7 +3,7 @@ import {hashPassword} from '../utilities/security.mjs';
 
 export default class User {
     constructor({ name, email, password, role }) {
-        this.id =  uuidv4().replace('-', '');
+        this.id =  uuidv4().replace('-', ' ');
         this.name = name;
         this.email = email;
         this.password =  hashPassword(password);

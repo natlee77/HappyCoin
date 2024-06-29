@@ -13,6 +13,9 @@ import PubNubServer from './pubnub-server.mjs';
 
 import path from 'path';
 import { fileURLToPath } from 'url';
+import logger from './middleware/logger.mjs';
+import { errorHandler } from './middleware/errorHandler.mjs';
+import logHandler from './middleware/logHandler.mjs';
 
 dotenv.config({ path: './config/config.env' });
 
@@ -48,6 +51,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+if (process.env.NODE_ENV === 'development') {
+  app.use(logger);
+}
+
 const DEFAULT_PORT = +process.env.PORT  ||5010 ;
 const ROOT_NODE = `http://localhost:${DEFAULT_PORT}`;
 
@@ -62,6 +69,15 @@ app.use('/api/v1/block', blockRouter);
 app.use('/api/v1/wallet', transactionRouter);
 app.use('/api/v1/auth', authRouter);
 
+// Catch all url...
+app.all('*', (req, res, next) => {
+  next(new ErrorResponse(`Can not find resource ${req.originalUrl}`, 404)); 
+});
+
+// Central felhantering...
+app.use(logHandler);
+//error handler-->efter router
+app.use(errorHandler);
 //synchronize blockchain
 const synchronize = async () => {
 //synchronize blockchain
@@ -87,7 +103,7 @@ console.log('NODE_PORT:_________ ', NODE_PORT);
 
 //start server
 app.listen(PORT, () => {
-  console.log(`Server is running on port___________: ${PORT}`);
+  console.log(`Server is running on port___________: ${PORT} in mode ${process.env.NODE_ENV}`);
 //synchronize blockchain if port is not 5001
   if (PORT !== DEFAULT_PORT) {
     synchronize();

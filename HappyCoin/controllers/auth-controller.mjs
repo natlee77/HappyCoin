@@ -1,5 +1,7 @@
 //JSDoc.app 
 import User from "../models/User.mjs";
+import ErrorResponse from "../models/ErrorResponseModel.mjs"; 
+
 import { saveUser, findUserByEmail, findUserById } from "../data/fileDb.mjs";
 import { generateToken, matchPassword } from "../utilities/security.mjs";
  
@@ -12,48 +14,34 @@ export const register =  async (req, res, next) => {
     const{ name, email, password, role} = req.body;
     //validation
     if (!name || !email || !password ) {
-        return res
-            .status(400)
-            .json({ success: false,
-                    statusCode: 400, 
-                    message: `missing required fields ${name}, ${email}, ${password}`});  
+        return next(new ErrorResponse(`missing required fields name:${name}, email:${email},password: ${password}`))            
     }
     // create a new user    
     const  user = new User({ name, email, password,  role :  role ?? 'user'});  
-    // save user to database
-     
+    // save user to database     
     await saveUser( user );
-
     // send responseJW
-    createAndSendToken(user.id, 201, res);
-     
+    createAndSendToken(user.id, 201, res);     
 };
 
 
 // @desc   logga in
 // @route  POST /api/v1/auth/login
-// @access Public
+// @access PUBLIC
 export const login = async (req, res, next) => {
     // validate email and password
      const { email, password } = req.body;
      if (!email || !password) {
-        return res .status(400) .json({ success: false,
-                    statusCode: 400, 
-                    message: `missing required fields ${email}, ${password}`});  
+        return next(new ErrorResponse(`missing required fields ${email}, ${password}`) );  
     }
     //taken user  from DB
-
     try {
     const user =  await findUserByEmail( email );   
     
     // validation password
     const isMatch = await matchPassword(password , user.password);  
     if (!isMatch) {
-        return res.status(401).json({
-            success: false,
-            statusCode: 401,
-            message: 'Wrong    password',
-        })  
+        return  next (new ErrorResponse( 'Wrong password'))  
     }
 
     // generate and send  new token
@@ -82,27 +70,24 @@ export const login = async (req, res, next) => {
 
 // @desc  return logat in  user-info  
 // @route  POST /api/v1/auth/me 
-// @access Public
+// @access PRIVATE
 ///?????????????????????????????????
 export const getMe = async (req, res, next) => {
     
     try {
-        const user =await findUserById(req.id);
+    const user = await findUserById(req.user.id);
+    console.log('user:____getme_______ ', user);
          
     res
     .status(200)
-    .json({ success: true,statusCode: 200, message: ' getMe :))' , data: user});
-        if (!user) {
-            return res.status(401).json({
-                success: false, 
-                statusCode: 401,
-                message: 'User not found by id',
-            })  
-        }  
+    .json({ success: true, statusCode: 200, message: ' getMe :))' , data: user});
+    //     if (!user) {
+    //         return next(new ErrorResponse('User not found by id' ) ); 
+    //     }  
     } catch (error) {
-        return res.status(500).json({
+        return res.status(404).json({
             success: false, 
-            statusCode: 500,
+            statusCode: 404,
             message: error.message,
         })  
     }   
@@ -127,7 +112,6 @@ export const logout = (req, res, next) => {
 const createAndSendToken = (userId, statusCode, res) => {
     // create token
     const token =  generateToken(userId);
-    console.log('token:___________ ', token);
     
     //set
     const  options = {
@@ -140,5 +124,5 @@ const createAndSendToken = (userId, statusCode, res) => {
     res
         .status(statusCode)
         .cookie('token', token, options)
-        .json({ success: true,statusCode: 201,    token   });
+        .json({ success: true,statusCode: 200,    token   });
 }
