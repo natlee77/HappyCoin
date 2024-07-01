@@ -49,11 +49,12 @@ export const login = async (req, res, next) => {
 
    //   email validation  
     if (!user) {
-        return res.status(401).json({
-            success: false, 
-            statusCode: 401,
-            message: 'User not found',
-        })  
+        return next(new ErrorResponse('User not found' , 401) );
+        //  res.status(401).json({
+        //     success: false, 
+        //     statusCode: 401,
+        //     message: 'User not found',
+        // })  
     }   
 
     } catch (error) {

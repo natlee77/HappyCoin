@@ -4,7 +4,7 @@ import { blockchain } from '../server.mjs';
 import  Miner from '../models/Miner.mjs';
 import { pubnubServer } from '../server.mjs';
 import Wallet from '../models/Wallet.mjs';
-  
+import ErrorResponse from "../models/ErrorResponseModel.mjs";   
 //________logic --> add , get
 export const addTransaction = (req, res, next) => {
     const { recipient,amount } = req.body;
@@ -17,9 +17,7 @@ export const addTransaction = (req, res, next) => {
             transaction = wallet.createTransaction({recipient,amount});
         }
     } catch (error) {
-        res
-            .status(400)
-            .json({success: false, statusCode: 400,data: error.message });
+        return next(new ErrorResponse(false, 'Invalid transaction', 400));
     }
     transactionPool.addTransaction(transaction); 
             //     "Nataliya  ": 44,
@@ -53,7 +51,7 @@ export const getTransactionPool = (req, res, next) => {
     res
         .status(200)
         .json({ success: true,  statusCode: 200,
-            data: transactionPool.transactionMap
+            data: transactionPool.transactionMap  
         });
 
 

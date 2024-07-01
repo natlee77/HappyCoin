@@ -38,7 +38,7 @@ import Error from "../Tools/Error";
      };
      //send transaction to blockchain
     async function saveTransaction(obj) {
-        const url = 'http://localhost:5001/api/v1/transactions/transaction';
+        const url = 'http://localhost:5001/api/v1/wallet/transaction';
         const http = new HttpClient(url);
         await http.add(obj);
         // redirect

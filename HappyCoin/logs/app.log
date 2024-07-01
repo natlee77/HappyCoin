@@ -223,3 +223,366 @@ GET /api/v1/auth/me -
 GET /api/v1/auth/me - 
   2024-06-29 
   18:14:47
+POST /api/v1/auth/register - 
+  2024-06-30 
+  14:27:15
+POST /api/v1/auth/login - 
+  2024-06-30 
+  14:27:45
+GET /api/v1/auth/me - 
+  2024-06-30 
+  14:28:25
+POST /api/v1/auth/login - 
+  2024-06-30 
+  14:35:42
+GET /api/v1/auth/me - 
+  2024-06-30 
+  14:38:46
+GET /api/v1/auth/me - 
+  2024-06-30 
+  14:39:41
+POST /api/v1/auth/login - 
+  2024-06-30 
+  14:40:20
+GET /api/v1/auth/me - 
+  2024-06-30 
+  14:40:34
+POST /api/v1/auth/login - 
+  2024-06-30 
+  14:40:59
+GET /api/v1/auth/me - 
+  2024-06-30 
+  14:41:44
+POST /api/v1/transactions/transaction - 
+  2024-06-30 
+  14:53:11
+POST /api/v1/auth/register - 
+  2024-06-30 
+  15:56:10
+GET /api/v1/transactions - 
+  2024-06-30 
+  17:00:22
+POST /api/v1/auth/register - 
+  2024-06-30 
+  17:16:55
+POST /api/v1/auth/login - 
+  2024-06-30 
+  17:17:26
+GET /api/v1/auth/me - 
+  2024-06-30 
+  17:18:07
+POST /api/v1/auth/register - 
+  2024-06-30 
+  17:18:53
+POST /api/v1/auth/register - 
+  2024-06-30 
+  17:19:21
+POST /api/v1/auth/register - 
+  2024-07-01 
+  14:15:21
+POST /api/v1/auth/login - 
+  2024-07-01 
+  14:15:30
+GET /api/v1/auth/me - 
+  2024-07-01 
+  14:15:44
+GET /api/v1/auth/me - 
+  2024-07-01 
+  14:16:12
+POST /api/v1/auth/login - 
+  2024-07-01 
+  14:16:29
+POST /api/v1/auth/register - 
+  2024-07-01 
+  14:17:15
+POST /api/v1/auth/login - 
+  2024-07-01 
+  14:19:03
+GET /api/v1/auth/me - 
+  2024-07-01 
+  14:19:10
+GET /api/v1/ - 
+  2024-07-01 
+  14:21:43
+GET /api/v1/ - 
+  2024-07-01 
+  14:24:18
+GET /api/v1/ - 
+  2024-07-01 
+  14:28:12
+GET /api/v1// - 
+  2024-07-01 
+  14:28:29
+GET /api/v1 - 
+  2024-07-01 
+  14:28:55
+POST /api/v1/auth/login - 
+  2024-07-01 
+  14:30:21
+GET /api/v1/auth/me - 
+  2024-07-01 
+  14:30:27
+GET /api/v1/transactions/transaction - 
+  2024-07-01 
+  14:34:57
+POST /api/v1/transactions/transaction - 
+  2024-07-01 
+  14:35:32
+POST /api/v1/transactions/transaction - 
+  2024-07-01 
+  14:38:50
+POST /api/v1/transactions/transaction - 
+  2024-07-01 
+  14:39:54
+POST /api/v1/transaction - 
+  2024-07-01 
+  14:42:05
+GET /api/v1/transactions - 
+  2024-07-01 
+  14:42:19
+GET /api/v1/transactions - 
+  2024-07-01 
+  14:42:39
+POST /api/v1/transactions/transaction - 
+  2024-07-01 
+  14:43:03
+GET /api/v1/blockchain - 
+  2024-07-01 
+  14:43:55
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  14:43:55
+POST /api/v1/transactions/transaction - 
+  2024-07-01 
+  14:44:15
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  14:45:13
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  14:47:11
+GET /api/v1/blockchain - 
+  2024-07-01 
+  14:47:12
+GET /api/v1/blockchain - 
+  2024-07-01 
+  14:47:12
+GET /api/v1/blockchain - 
+  2024-07-01 
+  14:48:47
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  14:48:47
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  14:49:54
+GET /api/v1/ - 
+  2024-07-01 
+  14:50:05
+GET /api/v1/ - 
+  2024-07-01 
+  14:54:12
+GET /api/v1/blockchain - 
+  2024-07-01 
+  14:55:02
+GET /api/v1/block - 
+  2024-07-01 
+  14:55:36
+GET /api/v1/block/mine - 
+  2024-07-01 
+  14:57:30
+GET /api/v1/blockchain - 
+  2024-07-01 
+  14:57:58
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  14:58:25
+GET /api/v1/block/mine - 
+  2024-07-01 
+  14:58:35
+POST /api/v1/block/mine - 
+  2024-07-01 
+  14:59:13
+POST /api/v1/block/mine - 
+  2024-07-01 
+  15:00:55
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:01:53
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:01:53
+POST /api/v1/auth/login - 
+  2024-07-01 
+  15:02:40
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:03:14
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:03:14
+POST /api/v1/auth/login - 
+  2024-07-01 
+  15:03:34
+GET /api/v1/auth/me - 
+  2024-07-01 
+  15:03:42
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  15:03:52
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:04:08
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:04:08
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  15:04:11
+POST /api/v1/auth/login - 
+  2024-07-01 
+  15:04:20
+GET /api/v1/auth/me - 
+  2024-07-01 
+  15:04:24
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  15:04:28
+POST /api/v1/auth/login - 
+  2024-07-01 
+  15:04:56
+GET /api/v1/auth/me - 
+  2024-07-01 
+  15:05:02
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  15:05:08
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  15:05:22
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  15:05:43
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:09:53
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:09:53
+POST /api/v1/auth/register - 
+  2024-07-01 
+  15:10:24
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:10:28
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:10:28
+POST /api/v1/auth/login - 
+  2024-07-01 
+  15:10:33
+GET /api/v1/auth/me - 
+  2024-07-01 
+  15:10:43
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  15:10:49
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  15:12:04
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:14:31
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:14:31
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:14:38
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:14:38
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:16:49
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:16:49
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:16:58
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:16:58
+POST /api/v1/auth/login - 
+  2024-07-01 
+  15:17:10
+GET /api/v1/auth/me - 
+  2024-07-01 
+  15:17:17
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  15:17:23
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  15:20:02
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:21:49
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:21:49
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:22:38
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:22:54
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:22:54
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:22:59
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:22:59
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:23:16
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:23:16
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:25:27
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:25:28
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:25:59
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:25:59
+POST /api/v1/auth/login - 
+  2024-07-01 
+  15:28:06
+POST /api/v1/wallet/transaction - 
+  2024-07-01 
+  15:28:16
+GET /api/v1/wallet/mine - 
+  2024-07-01 
+  15:32:59
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:47:01
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:47:01
+GET /api/v1/blockchain - 
+  2024-07-01 
+  15:47:19
+GET /api/v1/wallet/transactions - 
+  2024-07-01 
+  15:47:20

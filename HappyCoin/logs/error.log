@@ -16,3 +16,213 @@ Method: GET
                    Time: 17:48:14
                    Success: undefined - 
                    Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/transactions/transaction 
+                   Date: 2024-06-30 
+                   Time: 14:53:11
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/transactions 
+                   Date: 2024-06-30 
+                   Time: 17:00:22
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-01 
+                   Time: 14:16:12
+                   Success: false - 
+                   Message: jwt malformed
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-01 
+                   Time: 14:16:29
+                   Success: true - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-01 
+                   Time: 14:16:52
+                   Success: undefined - 
+                   Message: Expected double-quoted property name in JSON at position 66
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-01 
+                   Time: 14:17:15
+                   Success: true - 
+                   Message: missing required fields name:rem, email:rem@gmail.com,password: undefined
+Method: GET 
+                   Url: /api/v1/ 
+                   Date: 2024-07-01 
+                   Time: 14:21:43
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/ 
+                   Date: 2024-07-01 
+                   Time: 14:24:18
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/ 
+                   Date: 2024-07-01 
+                   Time: 14:28:12
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1// 
+                   Date: 2024-07-01 
+                   Time: 14:28:29
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1 
+                   Date: 2024-07-01 
+                   Time: 14:28:55
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/transactions/transaction 
+                   Date: 2024-07-01 
+                   Time: 14:34:57
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/transactions/transaction 
+                   Date: 2024-07-01 
+                   Time: 14:35:32
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/transactions/transaction 
+                   Date: 2024-07-01 
+                   Time: 14:38:50
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/transactions/transaction 
+                   Date: 2024-07-01 
+                   Time: 14:39:54
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/transaction 
+                   Date: 2024-07-01 
+                   Time: 14:42:05
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/transactions 
+                   Date: 2024-07-01 
+                   Time: 14:42:19
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/transactions 
+                   Date: 2024-07-01 
+                   Time: 14:42:39
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/transactions/transaction 
+                   Date: 2024-07-01 
+                   Time: 14:43:03
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/transactions/transaction 
+                   Date: 2024-07-01 
+                   Time: 14:44:15
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/ 
+                   Date: 2024-07-01 
+                   Time: 14:50:05
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/ 
+                   Date: 2024-07-01 
+                   Time: 14:54:12
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/block 
+                   Date: 2024-07-01 
+                   Time: 14:55:36
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/block/mine 
+                   Date: 2024-07-01 
+                   Time: 14:57:30
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/block/mine 
+                   Date: 2024-07-01 
+                   Time: 14:58:35
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-01 
+                   Time: 15:03:52
+                   Success: undefined - 
+                   Message: Cannot read properties of undefined (reading 'role')
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-01 
+                   Time: 15:04:11
+                   Success: undefined - 
+                   Message: Cannot read properties of undefined (reading 'role')
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-01 
+                   Time: 15:04:29
+                   Success: undefined - 
+                   Message: Cannot read properties of undefined (reading 'role')
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-01 
+                   Time: 15:05:08
+                   Success: undefined - 
+                   Message: Cannot read properties of undefined (reading 'role')
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-01 
+                   Time: 15:05:22
+                   Success: undefined - 
+                   Message: Cannot read properties of undefined (reading 'role')
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-01 
+                   Time: 15:05:43
+                   Success: undefined - 
+                   Message: Cannot read properties of undefined (reading 'role')
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-01 
+                   Time: 15:10:49
+                   Success: undefined - 
+                   Message: Cannot read properties of undefined (reading 'role')
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-01 
+                   Time: 15:12:04
+                   Success: undefined - 
+                   Message: Cannot read properties of undefined (reading 'role')
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-01 
+                   Time: 15:17:23
+                   Success: undefined - 
+                   Message: Cannot read properties of undefined (reading 'role')
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-01 
+                   Time: 15:20:02
+                   Success: undefined - 
+                   Message: Cannot read properties of undefined (reading 'role')

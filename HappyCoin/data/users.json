@@ -1,50 +1,26 @@
 [
     {
-        "id": "1c83cc6cd348-481d-b36b-c7bcdc89ee2d",
-        "name": "nbbbata",
-        "email": "nat@gmail.com",
-        "password": "$2a$08$TeqAwXG4gZEZzm4CliNE9ewb9LMIPRN5Q1yDIYHf87B3O5IhTJ75m",
-        "role": "user",
-        "createdAt": "2024-06-17T14:16:07.030Z"
+        "id": "f6bb18ce c4fb-4dcd-834d-f237aab1a646",
+        "name": "nata",
+        "email": "natlisjo@gmail.com",
+        "password": "$2a$08$rYzrqJH7m2G4mJomQLUuKuvrofQFk6CKH/mop6XleqyFJv53UYwWi",
+        "role": "admin",
+        "createdAt": "2024-06-30T15:16:55.078Z"
     },
     {
-        "id": "e0f394792765-4ee1-a1f7-1053b9903218",
-        "name": "nbbbata",
-        "email": "nat@gmail.com",
-        "password": "$2a$08$5NFxtYWnVksmJmBTwCJsgurPKXhylblQw1hp1fcHR4jLRs5Q.AkNW",
-        "role": "user",
-        "createdAt": "2024-06-17T14:17:53.663Z"
+        "id": "d3b17b13 5722-468d-9266-7a9d91034c5f",
+        "name": "max",
+        "email": "max@gmail.com",
+        "password": "$2a$08$d./VXtgz1kZdPRrgK0S7QOBHbNA1NCbvJmZrXn0n61pOAO3nvqh2G",
+        "role": "miner",
+        "createdAt": "2024-06-30T15:18:53.412Z"
     },
     {
-        "id": "53b7280b3323-41b3-99ec-5bba2b0da9a2",
-        "name": "gggga",
-        "email": "nat@gmail.com",
-        "password": "$2a$08$rEpyLUL.fg../fNs7ckP7ejV1POcMpuh2rO99NP6BIJuGht43osaS",
+        "id": "f6c52a6d b178-4979-9e1c-b45580f30da5",
+        "name": "rem",
+        "email": "rem@gmail.com",
+        "password": "$2a$08$ofs0yERj8E6X/0Dt9GkALO4BMOhwoznycWS4e6rw04PlC3sUQuf7a",
         "role": "user",
-        "createdAt": "2024-06-17T15:07:07.250Z"
-    },
-    {
-        "id": "2099347aa916-4006-a22e-5e902f8b2b97",
-        "name": "nat",
-        "email": "nat@gmail.com",
-        "password": "$2a$08$F40djFW.1RSMPlk4qLWPzOhV11Lr0ZqMIrMipCgiTol2bBTTsFX8a",
-        "role": "user",
-        "createdAt": "2024-06-26T12:38:12.751Z"
-    },
-    {
-        "id": "a0765f4f 21dc-4c07-b17a-be2652a56b6e",
-        "name": "pan",
-        "email": "luda@gmail.com",
-        "password": "$2a$08$fq2q7LZHNlXB82O3n9i0FunwJLDSlFTIluGnxMVv8Obh1y.DT/mvW",
-        "role": "user",
-        "createdAt": "2024-06-28T16:04:05.075Z"
-    },
-    {
-        "id": "90ae6a43 74c9-49f2-ab1b-c552068270bd",
-        "name": "poook",
-        "email": "luka@gmail.com",
-        "password": "$2a$08$.K6g82bf9TqrrxyGOmI9OOzWHcOtduZK47jhk9mnM0pRZ8Kky/MoS",
-        "role": "user",
-        "createdAt": "2024-06-28T16:18:58.950Z"
-    }
+        "createdAt": "2024-06-30T15:19:22.022Z"
+    } 
 ]
