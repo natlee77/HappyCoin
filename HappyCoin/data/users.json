@@ -5,22 +5,28 @@
         "email": "natlisjo@gmail.com",
         "password": "$2a$08$rYzrqJH7m2G4mJomQLUuKuvrofQFk6CKH/mop6XleqyFJv53UYwWi",
         "role": "admin",
-        "createdAt": "2024-06-30T15:16:55.078Z"
+        "createdAt": 1719846414113,
+        "resetPasswordToken": null,
+        "resetPasswordTokenExpire": null
+    },
+    {
+        "id": "da414e3f e773-49e4-bdd7-d7f1aa55198d",
+        "name": "rem",
+        "email": "rem@gmail.com",
+        "password": "$2a$08$wSax3cPSEPNO/cuC9520nuoFIEfPA20.hfnSVA7QMgNrbbxV74xAi",
+        "role": "user",
+        "createdAt": 1719846414116,
+        "resetPasswordToken": "bd5d053c9d709f877c0db861658295eb598bd9a2735a51b2c9e47f62fc92eec2",
+        "resetPasswordTokenExpire": "2024-07-01 18:21:00"
     },
     {
         "id": "d3b17b13 5722-468d-9266-7a9d91034c5f",
         "name": "max",
         "email": "max@gmail.com",
-        "password": "$2a$08$d./VXtgz1kZdPRrgK0S7QOBHbNA1NCbvJmZrXn0n61pOAO3nvqh2G",
+        "password": "$2a$08$tpByEzrwhlPYrHmRiYOsKORDU9LEhOaeD3t9HPqmo.cDP7m/5Uft2",
         "role": "miner",
-        "createdAt": "2024-06-30T15:18:53.412Z"
-    },
-    {
-        "id": "f6c52a6d b178-4979-9e1c-b45580f30da5",
-        "name": "rem",
-        "email": "rem@gmail.com",
-        "password": "$2a$08$ofs0yERj8E6X/0Dt9GkALO4BMOhwoznycWS4e6rw04PlC3sUQuf7a",
-        "role": "user",
-        "createdAt": "2024-06-30T15:19:22.022Z"
-    } 
+        "createdAt": 1719846414110,
+        "resetPasswordToken": null,
+        "resetPasswordTokenExpire": null
+    }
 ]

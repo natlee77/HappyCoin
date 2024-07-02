@@ -2,8 +2,9 @@
 import User from "../models/User.mjs";
 import ErrorResponse from "../models/ErrorResponseModel.mjs"; 
 
-import { saveUser, findUserByEmail, findUserById } from "../data/fileDb.mjs";
+import { saveUser, findUserByEmail, findUserById, getResetPasswordToken, findUserByResetPasswordToken, updateUser } from "../data/fileDb.mjs";
 import { generateToken, matchPassword } from "../utilities/security.mjs";
+import { hashPassword } from "../utilities/security.mjs";
  
 
 //@desc   registrete user
@@ -72,7 +73,6 @@ export const login = async (req, res, next) => {
 // @desc  return logat in  user-info  
 // @route  POST /api/v1/auth/me 
 // @access PRIVATE
-///?????????????????????????????????
 export const getMe = async (req, res, next) => {
     
     try {
@@ -97,6 +97,77 @@ export const getMe = async (req, res, next) => {
 
 
 
+//@desc   forgot password
+//@route  PUOST /api/v1/auth/forgot-password
+//@access PUBLIC
+export const  forgotPassword = async (req, res, next) => {
+    const   email   = req.body.email;
+
+    if (!email) {
+        return next(new ErrorResponse(`missing required fields ${email}`, 400) );
+    }
+
+    try {
+        let user = await findUserByEmail(email);
+        if (!user) {
+            return next(new ErrorResponse( `User not found with this ${email} address.`, 404) );
+        }
+    //create reset token
+        user = await getResetPasswordToken(user.id);
+    //create URL for reset MSG
+        const resetURL = `${req.protocol}://${req.get('host')}/api/v1/auth/reset-password/${user.resetPasswordToken}`;
+                 
+     //send email
+     const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\n If you did not forget your password, please ignore this email!`
+        // await sendPasswordResetEmail(user, resetURL);    
+     //return response
+        res
+        .status(200)
+        .json({ success: true, statusCode: 200, message: ' resetPassword :))' , data: user});
+     }
+
+    catch (error) {
+        return next(new ErrorResponse( error.message, 500) );
+    }
+}
+
+
+
+
+//@desc   reset password
+//@route  PUT /api/v1/auth/reset-password/:token
+//@access PUBLIC
+export const resetPassword =async (req, res, next)=>{
+   
+  try {
+    const resetPasswordToken =req.params.token;
+    const password = req.body.password;
+
+    if (!resetPasswordToken || !password) {
+        return next(new ErrorResponse(`missing required fields ${resetPasswordToken} or ${password}`, 400) );
+    }
+
+    // taken user from DB based on resetPasswordToken
+    const user = await findUserByResetPasswordToken(resetPasswordToken);
+    // generate new hashed password
+    const hashedPassword = hashPassword(password);
+    // update user new password
+    user.password = hashedPassword;
+    user.resetPasswordToken = null;
+    user.resetPasswordTokenExpire = null;
+
+    // save user to DB
+    await updateUser(user);
+
+    // send response
+    res
+    .status(200)
+    .json({ success: true, statusCode: 200, message: ' resetPassword success:))' , data: user});
+}catch (error) {
+    return next(new ErrorResponse( error.message, 500) );
+}
+
+}
 
 
 // @desc   logga ut

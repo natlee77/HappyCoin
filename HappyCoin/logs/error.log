@@ -226,3 +226,9 @@ Method: POST
                    Time: 15:20:02
                    Success: undefined - 
                    Message: Cannot read properties of undefined (reading 'role')
+Method: POST 
+                   Url: /api/v1/auth/forgot-password 
+                   Date: 2024-07-01 
+                   Time: 18:18:13
+                   Success: true - 
+                   Message: sendPasswordResetEmail is not defined

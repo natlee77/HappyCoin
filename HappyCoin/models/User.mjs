@@ -8,6 +8,8 @@ export default class User {
         this.email = email;
         this.password =  hashPassword(password);
         this.role = role;
-        this.createdAt = new Date();        
+        this.createdAt =   Date.now();  
+        this.resetPasswordToken = null; 
+        this.resetPasswordTokenExpire = null;     
     }
 }
