@@ -5,7 +5,7 @@ import ErrorResponse from "../models/ErrorResponseModel.mjs";
 import { saveUser, findUserByEmail, findUserById, getResetPasswordToken, findUserByResetPasswordToken, updateUser } from "../data/fileDb.mjs";
 import { generateToken, matchPassword } from "../utilities/security.mjs";
 import { hashPassword } from "../utilities/security.mjs";
- 
+import { sendEmail } from "../utilities/sendEmail.mjs"; 
 
 //@desc   registrete user
 //@route  POST /api/v1/auth/register
@@ -106,29 +106,37 @@ export const  forgotPassword = async (req, res, next) => {
     if (!email) {
         return next(new ErrorResponse(`missing required fields ${email}`, 400) );
     }
-
-    try {
-        let user = await findUserByEmail(email);
-        if (!user) {
+    let user = await findUserByEmail(email);
+    
+    if (!user) {
             return next(new ErrorResponse( `User not found with this ${email} address.`, 404) );
-        }
+    }
+   
     //create reset token
-        user = await getResetPasswordToken(user.id);
+    user = await getResetPasswordToken(user.id);
     //create URL for reset MSG
-        const resetURL = `${req.protocol}://${req.get('host')}/api/v1/auth/reset-password/${user.resetPasswordToken}`;
+    const resetURL = `${req.protocol}://${req.get('host')}/api/v1/auth/reset-password/${user.resetPasswordToken}`;
+                 console.log('resetURL:_______ ', resetURL);
                  
-     //send email
+    //send email
+
      const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\n If you did not forget your password, please ignore this email!`
-        // await sendPasswordResetEmail(user, resetURL);    
+        
+         
+     try {
+         await sendEmail({
+            recipient: "natlisjo@gmailcom",// req.body.email,
+            subject: 'Password reset request',
+            message,
+         });
+     } catch (error) {        
+         return next(new ErrorResponse( error.message, 500));
+     }  
      //return response
         res
         .status(200)
         .json({ success: true, statusCode: 200, message: ' resetPassword :))' , data: user});
-     }
-
-    catch (error) {
-        return next(new ErrorResponse( error.message, 500) );
-    }
+      
 }
 
 

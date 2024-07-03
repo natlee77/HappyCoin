@@ -11,22 +11,24 @@ export const saveUser = async (user) => {
   await writeFileAsync('data', 'users.json', JSON.stringify(users));
 };
 
+
+
   export const findUserByEmail = async (email) => {
     const users = await loadUsers();
    const user = users.find((user) => user.email === email);
 
-  if (!user) {
-    throw new Error('can not find user :((((');
-  }
-//return anonymous object
-  return {
-    id: user.id,
-    name: user.name,
-    email: user.email,
-    password: user.password,
-  };
+//   if (!user) {
+//     throw new Error('can not find user :((((');
+//   }
+// //return anonymous object
+//   return {
+//     id: user.id,
+//     name: user.name,
+//     email: user.email,
+//     password: user.password,
+//   };
  
-  
+    return user;
  };
 
  export const findUserById = async (id) => {
@@ -50,10 +52,10 @@ export const saveUser = async (user) => {
     const users = await loadUsers();
     const user = users.find((user) => user.resetPasswordToken === token);
   
-    if (!user) {
-      throw new Error('can not find user with this resetPasswordToken :((((');
+    if (!user || new Date(user.resetPasswordTokenExpire) < Date.now()) {
+      throw new Error('can not find user with this resetPasswordToken :((((', 401);
     }
-    //return anonymous object
+     
     return user;
   }
 

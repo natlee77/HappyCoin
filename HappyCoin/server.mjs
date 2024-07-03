@@ -23,7 +23,7 @@ dotenv.config({ path: './config/config.env' });
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 global._appdir = dirname;
-console.log('global._appdir______',global._appdir);
+// console.log('global._appdir______',global._appdir);
 
  
 //all keys are in .env  --gitignore

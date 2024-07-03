@@ -232,3 +232,9 @@ Method: POST
                    Time: 18:18:13
                    Success: true - 
                    Message: sendPasswordResetEmail is not defined
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-02 
+                   Time: 14:04:57
+                   Success: false - 
+                   Message:  access denied - no token provided
