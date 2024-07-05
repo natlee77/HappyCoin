@@ -8,7 +8,7 @@ A complete blockchain for my own cryptocurrency 'Happycoin' with transaction man
 - It starts up several nodes with the blockchain. 
 - Synchronization of the blockchain takes place when starting a new node, when adding transactions and when a block is created.
 - The technology for network communication: Pubnub.
-- The block chain, blocks and transactions are saved in a mongodb database. (Although this is in principle not necessary in a real block chain).
+- The block chain, blocks and transactions are saved in a MongoDB database. (Although this is in principle not necessary in a real block chain).
 ### _______Security
 - To be able to use a blockchain as a consumer, you must be registered and logged in.
 - Here  use Json Web Token (JWT) as a technology
