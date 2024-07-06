@@ -15,7 +15,7 @@ A complete blockchain for my own cryptocurrency 'Happycoin' with transaction man
   -> to validate that a user is logged in and belongs to the correct role 
    -> to be able to create a new transaction 
    -> and to be able to list their own transactions and blocks. 
-- Users must be stored in a mongodb document.
+- Users must be stored in a MongoDB document.
 ### _______Client App
 A client is developed in an application with HTML and CSS:
 - React with Vite

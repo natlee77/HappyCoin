@@ -238,3 +238,9 @@ Method: POST
                    Time: 14:04:57
                    Success: false - 
                    Message:  access denied - no token provided
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-06 
+                   Time: 14:22:25
+                   Success: undefined - 
+                   Message: Expected double-quoted property name in JSON at position 96

@@ -2677,3 +2677,15 @@ GET /api/v1/blockchain -
 GET /api/v1/blockchain - 
   2024-07-05 
   16:40:12
+POST /api/v1/auth/register - 
+  2024-07-06 
+  14:22:35
+POST /api/v1/auth/register - 
+  2024-07-06 
+  14:25:12
+POST /api/v1/auth/register - 
+  2024-07-06 
+  14:26:56
+POST /api/v1/auth/register - 
+  2024-07-06 
+  14:27:52
