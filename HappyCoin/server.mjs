@@ -4,6 +4,9 @@ import Blockchain from './models/Blockchain.mjs';
 import TransactionPool from './models/TransactionPool.mjs';
 import Wallet from './models/Wallet.mjs';
 import cors from 'cors';
+import colors from 'colors';
+import morgan from 'morgan';  //for requests PUT,POST,GET,DELETE
+import { connectDB } from './data/mongoDB.mjs';
 
 import authRouter from './routes/auth-routes.mjs';
 import blockRouter from './routes/block-routes.mjs';
@@ -18,6 +21,9 @@ import { errorHandler } from './middleware/errorHandler.mjs';
 import logHandler from './middleware/logHandler.mjs';
 
 dotenv.config({ path: './config/config.env' });
+
+//connection MongoDB
+connectDB();
 
 // global _appdir for jsonDB ===__dirname(commonJs)
 const filename = fileURLToPath(import.meta.url);
@@ -50,7 +56,7 @@ const app = express();
 //middlewares
 app.use(express.json());
 app.use(cors());
-
+app.use(morgan('dev'));// development
 if (process.env.NODE_ENV === 'development') {
   app.use(logger);
 }
@@ -63,6 +69,7 @@ let NODE_PORT;
 setTimeout(() => {
   pubnubServer.broadcast();
 }, 1000);
+
 
 app.use('/api/v1/blockchain', blockchainRouter);
 app.use('/api/v1/block', blockRouter);
@@ -102,10 +109,20 @@ const PORT = NODE_PORT || DEFAULT_PORT;
 console.log('NODE_PORT:_________ ', NODE_PORT);
 
 //start server
-app.listen(PORT, () => {
-  console.log(`Server is running on port___________: ${PORT} in mode ${process.env.NODE_ENV}`);
+const server= app.listen(PORT, () => {
+  console.log(`Server is running on port___________: ${PORT} in mode ${process.env.NODE_ENV}`.bgBlue);
 //synchronize blockchain if port is not 5001
   if (PORT !== DEFAULT_PORT) {
     synchronize();
   }
 });
+
+//rejection handler
+process.on('unhandledRejection', (err) => {
+  console.log(`Error: ${err.message}`.red.underline.bold);
+  server.close(() => {
+    process.exit(1);
+  });
+});
+ 
+  
