@@ -1,7 +1,6 @@
-// import { v4 as uuidv4 } from 'uuid';
-// import {hashPassword} from '../utilities/security.mjs';
+ 
 import mongoose from "mongoose";  
-
+import bcrypt from 'bcryptjs';
 
  const userSchema = new mongoose.Schema({
     name: {
@@ -30,17 +29,17 @@ import mongoose from "mongoose";
         default: Date.now
     },
     resetPasswordToken: String,
-    resetPasswordTokenExpire: Date,
-//     constructor({ name, email, password, role }) {
-//         this.id =  uuidv4().replace('-', ' ');
-//         this.name = name;
-//         this.email = email;
-//         this.password =  hashPassword(password);
-//         this.role = role;
-//         this.createdAt =   Date.now();  
-//         this.resetPasswordToken = null; 
-//         this.resetPasswordTokenExpire = null;     
-//     }
+    resetPasswordTokenExpire: Date
+  });
+
+  //hash password for MongoDB
+  userSchema.pre('save', async function(next) { 
+    if(!this.isModified('password')) {
+        next();
+    }//if update user 
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+     
   });
 
 export  default mongoose.model("User", userSchema);
