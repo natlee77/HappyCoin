@@ -1,7 +1,7 @@
 import express from 'express';
 import {
     register,
-    // login,
+    login,
     // getMe,
     // forgotPassword,
     // resetPassword
@@ -14,7 +14,7 @@ const router = express.Router();
 
 
 router.post('/register', register);
-// router.post('/login', login);
+router.post('/login', login);
 // router.post('/forgot-password', forgotPassword);
 
 // router.put('/reset-password/:token', resetPassword);

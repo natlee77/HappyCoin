@@ -7,9 +7,10 @@ const logger = (req, res, next) => {
   
   
 //____msg
-  const message = `${req.method} ${req.originalUrl} - 
-  ${new Date().toLocaleDateString('sv-SE')} 
-  ${new Date().toLocaleTimeString('sv-SE')}\n`;
+  const message = `${req.method} ${req.originalUrl} 
+   -   ${req.headers['user-agent']}    ${res.message}  
+  ${new Date().toLocaleDateString('sv-SE')}- ${new Date().toLocaleTimeString('sv-SE')}\n`;
+
  
 //____save msg to log file
   fs.appendFileSync(filePath, message);

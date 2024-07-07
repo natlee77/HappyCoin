@@ -1,13 +1,7 @@
-//JSDoc.app 
+//JSDoc.app //MONGODB
 import User from "../models/User.mjs";
-
 import ErrorResponse from "../models/ErrorResponseModel.mjs"; 
-
-// import { saveUser, findUserByEmail, findUserById, getResetPasswordToken, findUserByResetPasswordToken, updateUser } from "../data/fileDb.mjs";
-// import { generateToken, matchPassword } from "../utilities/security.mjs";
-// import { hashPassword } from "../utilities/security.mjs";
-// import { sendEmail } from "../utilities/sendEmail.mjs"; 
-
+ 
 //@desc   registrete user
 //@route  POST /api/v1/auth/register
 //@access Public
@@ -15,68 +9,38 @@ export const register =  async (req, res, next) => {
     //should create a new user (name, email, password,role in system)   
     const { name, email, password, role} = req.body;
     const user= await User.create({name,email,password, role})
-    res.status(201).json({ 
-        success: true,         
-        statusCode: 201, 
-        data: user });
-    
-    // const{ name, email, password, role} = req.body;
-    // //validation
-    // if (!name || !email || !password ) {
-    //     return next(new ErrorResponse(`missing required fields name:${name}, email:${email},password: ${password}`))            
-    // }
-    // // create a new user    
-    // const  user = new User({ name, email, password,  role :  role ?? 'user'});  
-    // // save user to database     
-    // await saveUser( user );
-    // // send responseJW
-    // createAndSendToken(user.id, 201, res);     
+    // send responseJWT
+    createAndSendToken(user, 201, res);
+         
 };
 
 
 // // @desc   logga in
 // // @route  POST /api/v1/auth/login
 // // @access PUBLIC
-// export const login = async (req, res, next) => {
-//     // validate email and password
-//      const { email, password } = req.body;
-//      if (!email || !password) {
-//         return next(new ErrorResponse(`missing required fields ${email}, ${password}`) );  
-//     }
-//     //taken user  from DB
-//     try {
-//     const user =  await findUserByEmail( email );   
+export const login = async (req, res, next) => {
+    const { email, password } = req.body;
+// validate email and password    
+     if (!email || !password) {
+        return next(new ErrorResponse(`missing required fields ${email}, ${password}`,400) );  
+    }
+
+//taken user  from mongoose DB by email   
+    const user =  await User.findOne({ email} ).select('+password');   
+   if (!user) {
+        return next(new ErrorResponse('User not found' , 401) );        
+    }
+// validation password
+    const isMatch = await user.matchPassword(password );  
+
+    if (!isMatch) {
+        return  next (new ErrorResponse( 'Wrong password', 401) )  
+    }
+     
+  //  generate and send  new JWTtoken
+    createAndSendToken(user, 200, res);     
     
-//     // validation password
-//     const isMatch = await matchPassword(password , user.password);  
-//     if (!isMatch) {
-//         return  next (new ErrorResponse( 'Wrong password'))  
-//     }
-
-//     // generate and send  new token
-//     createAndSendToken(user.id, 200, res);      
-
-//    //   email validation  
-//     if (!user) {
-//         return next(new ErrorResponse('User not found' , 401) );
-//         //  res.status(401).json({
-//         //     success: false, 
-//         //     statusCode: 401,
-//         //     message: 'User not found',
-//         // })  
-//     }   
-
-//     } catch (error) {
-//         return res.status(500).json({
-//             success: false, 
-//             statusCode: 500,
-//             message: error.message,
-//         })  
-//     }
-
-
-
-// }
+}
 
 // // @desc  return logat in  user-info  
 // // @route  POST /api/v1/auth/me 
@@ -197,20 +161,13 @@ export const register =  async (req, res, next) => {
 
 
 // //helper function
-// const createAndSendToken = (userId, statusCode, res) => {
-//     // create token
-//     const token =  generateToken(userId);
-    
-//     //set
-//     const  options = {
-//         expires: new Date(
-//             Date.now() + process.env.JWT_COOKIE_TTL  * 24 * 60 * 60 * 1000//HOURS * MINUTES * SECONDS * MILLISECONDS
-//         ),
-//         httpOnly: true  
-//     }
+const createAndSendToken = (user, statusCode, res) => {
+// create token
+    const token = user.getSignedJwtToken() ;
+ 
 //     // send response JWT 
-//     res
-//         .status(statusCode)
-//         .cookie('token', token, options)
-//         .json({ success: true,statusCode: 200,    token   });
-// }
+    res
+        .status(statusCode)
+        // .cookie('token', token, options)
+        .json({ success: true,statusCode: 200,    token   });
+ }

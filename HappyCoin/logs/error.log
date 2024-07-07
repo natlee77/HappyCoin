@@ -244,3 +244,75 @@ Method: POST
                    Time: 14:22:25
                    Success: undefined - 
                    Message: Expected double-quoted property name in JSON at position 96
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-07 
+                   Time: 14:02:09
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-07 
+                   Time: 14:02:56
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-07 
+                   Time: 14:04:34
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-07 
+                   Time: 14:05:32
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-07 
+                   Time: 14:05:36
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-07 
+                   Time: 14:23:20
+                   Success: false - 
+                   Message: User not found
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-07 
+                   Time: 14:23:41
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-07 
+                   Time: 14:58:28
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-07 
+                   Time: 15:00:25
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-07 
+                   Time: 15:02:27
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-07 
+                   Time: 15:03:27
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-07 
+                   Time: 15:04:22
+                   Success: false - 
+                   Message: Wrong password

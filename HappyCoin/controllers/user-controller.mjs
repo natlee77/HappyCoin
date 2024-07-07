@@ -1,4 +1,4 @@
-//MONGODB
+//copy of auth -controller before MONGODB
  
 import User from "../models/User.mjs";
 import ErrorResponse from "../models/ErrorResponseModel.mjs"; 
