@@ -2,9 +2,9 @@ import express from 'express';
 import {
     register,
     login,
-    // getMe,
-    // forgotPassword,
-    // resetPassword
+    getMe,
+    forgotPassword,
+    resetPassword
 } from '../controllers/auth-controller.mjs';
 import {
     protect
@@ -15,10 +15,10 @@ const router = express.Router();
 
 router.post('/register', register);
 router.post('/login', login);
-// router.post('/forgot-password', forgotPassword);
+router.post('/forgot-password', forgotPassword);
 
-// router.put('/reset-password/:token', resetPassword);
+router.put('/reset-password/:token', resetPassword);
 
-// router.get('/me', protect, getMe);
+router.get('/me', protect, getMe);
 
 export default router

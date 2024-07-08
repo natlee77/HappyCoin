@@ -316,3 +316,87 @@ Method: POST
                    Time: 15:04:22
                    Success: false - 
                    Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-07 
+                   Time: 15:19:39
+                   Success: undefined - 
+                   Message: E11000 duplicate key error collection: happycoin.users index: email_1 dup key: { email: "natlisjo@gmail.com" }
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-07 
+                   Time: 15:21:55
+                   Success: undefined - 
+                   Message: E11000 duplicate key error collection: happycoin.users index: email_1 dup key: { email: "natlisjo@gmail.com" }
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-07 
+                   Time: 15:24:35
+                   Success: undefined - 
+                   Message: E11000 duplicate key error collection: happycoin.users index: email_1 dup key: { email: "natlisjo@gmail.com" }
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-07 
+                   Time: 15:25:46
+                   Success: undefined - 
+                   Message: E11000 duplicate key error collection: happycoin.users index: email_1 dup key: { email: "natlisjo@gmail.com" }
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-07 
+                   Time: 15:32:12
+                   Success: undefined - 
+                   Message: E11000 duplicate key error collection: happycoin.users index: email_1 dup key: { email: "natlisjo@gmail.com" }
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-07 
+                   Time: 15:33:19
+                   Success: undefined - 
+                   Message: E11000 duplicate key error collection: happycoin.users index: email_1 dup key: { email: "natlisjo@gmail.com" }
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-07 
+                   Time: 15:34:44
+                   Success: undefined - 
+                   Message: E11000 duplicate key error collection: happycoin.users index: email_1 dup key: { email: "natlisjo@gmail.com" }
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-07 
+                   Time: 15:39:16
+                   Success: undefined - 
+                   Message: E11000 duplicate key error collection: happycoin.users index: email_1 dup key: { email: "natlisjo@gmail.com" }
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-07 
+                   Time: 16:02:20
+                   Success: undefined - 
+                   Message: E11000 duplicate key error collection: happycoin.users index: email_1 dup key: { email: "natlisjo@gmail.com" }
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-07 
+                   Time: 16:09:07
+                   Success: undefined - 
+                   Message: E11000 duplicate key error collection: happycoin.users index: email_1 dup key: { email: "natlisjo@gmail.com" }
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-07 
+                   Time: 16:10:38
+                   Success: undefined - 
+                   Message: E11000 duplicate key error collection: happycoin.users index: email_1 dup key: { email: "natlisjo@gmail.com" }
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/ec13fde36aa80d640218b4905e5b32465f808ef9cab56c189023e8c015686899 
+                   Date: 2024-07-07 
+                   Time: 16:22:57
+                   Success: true - 
+                   Message: findUserByResetPasswordToken is not defined
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-07 
+                   Time: 16:23:13
+                   Success: undefined - 
+                   Message: Cannot read properties of undefined (reading 'id')
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-08 
+                   Time: 12:54:07
+                   Success: undefined - 
+                   Message: jwt malformed

@@ -1,24 +1,24 @@
 //JSDoc.app //MONGODB
 import User from "../models/User.mjs";
 import ErrorResponse from "../models/ErrorResponseModel.mjs"; 
+import { asyncHandler } from "../middleware/asyncHandler.mjs";
  
 //@desc   registrete user
 //@route  POST /api/v1/auth/register
 //@access Public
-export const register =  async (req, res, next) => {
+export const register = asyncHandler( async (req, res, next) => {
     //should create a new user (name, email, password,role in system)   
     const { name, email, password, role} = req.body;
     const user= await User.create({name,email,password, role})
     // send responseJWT
     createAndSendToken(user, 201, res);
-         
-};
+});
 
 
-// // @desc   logga in
-// // @route  POST /api/v1/auth/login
-// // @access PUBLIC
-export const login = async (req, res, next) => {
+// @desc   logga in
+// @route  POST /api/v1/auth/login
+// @access PUBLIC
+export const login = asyncHandler( async (req, res, next) => {
     const { email, password } = req.body;
 // validate email and password    
      if (!email || !password) {
@@ -37,126 +37,115 @@ export const login = async (req, res, next) => {
         return  next (new ErrorResponse( 'Wrong password', 401) )  
     }
      
-  //  generate and send  new JWTtoken
+//  generate and send  new JWTtoken
     createAndSendToken(user, 200, res);     
     
-}
+});
 
-// // @desc  return logat in  user-info  
-// // @route  POST /api/v1/auth/me 
-// // @access PRIVATE
-// export const getMe = async (req, res, next) => {
-    
-//     try {
-//     const user = await findUserById(req.user.id);
-//     console.log('user:____getme_______ ', user);
+// @route  POST /api/v1/auth/me 
+// @access PRIVATE
+export const getMe = asyncHandler( async (req, res, next) => {
+   const user = await User.findById(req.user.id); 
          
-//     res
-//     .status(200)
-//     .json({ success: true, statusCode: 200, message: ' getMe :))' , data: user});
-//     //     if (!user) {
-//     //         return next(new ErrorResponse('User not found by id' ) ); 
-//     //     }  
-//     } catch (error) {
-//         return res.status(404).json({
-//             success: false, 
-//             statusCode: 404,
-//             message: error.message,
-//         })  
-//     }   
-   
-// }
+    res.status(200).json({
+         success: true, 
+         statusCode: 200, 
+         message: ' getMe :))' , 
+         data: user});
+     if (!user) {
+         return next(new ErrorResponse('User not found by id' ));
+        }  
+});
 
 
 
-// //@desc   forgot password
-// //@route  PUOST /api/v1/auth/forgot-password
-// //@access PUBLIC
-// export const  forgotPassword = async (req, res, next) => {
-//     const   email   = req.body.email;
+//@desc   forgot password
+//@route  POST /api/v1/auth/forgot-password
+//@access PUBLIC
+export const  forgotPassword = asyncHandler( async (req, res, next) => {
+    const   email   = req.body.email;
 
-//     if (!email) {
-//         return next(new ErrorResponse(`missing required fields ${email}`, 400) );
-//     }
-//     let user = await findUserByEmail(email);
+    if (!email) {
+        return next(new ErrorResponse(`missing required fields ${email}`, 400) );
+    }
+    let user = await findUserByEmail(email);
     
-//     if (!user) {
-//             return next(new ErrorResponse( `User not found with this ${email} address.`, 404) );
-//     }
+    if (!user) {
+            return next(new ErrorResponse( `User not found with this ${email} address.`, 404) );
+    }
    
-//     //create reset token
-//     user = await getResetPasswordToken(user.id);
-//     //create URL for reset MSG
-//     const resetURL = `${req.protocol}://${req.get('host')}/api/v1/auth/reset-password/${user.resetPasswordToken}`;
-//                  console.log('resetURL:_______ ', resetURL);
+    //create reset token
+    user = await getResetPasswordToken(user.id);
+    //create URL for reset MSG
+    const resetURL = `${req.protocol}://${req.get('host')}/api/v1/auth/reset-password/${user.resetPasswordToken}`;
+                 console.log('resetURL:_______ ', resetURL);
                  
-//     //send email
+    //send email
 
-//      const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\n If you did not forget your password, please ignore this email!`
+     const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\n If you did not forget your password, please ignore this email!`
         
          
-//      try {
-//          await sendEmail({
-//             recipient: "natlisjo@gmailcom",// req.body.email,
-//             subject: 'Password reset request',
-//             message,
-//          });
-//      } catch (error) {        
-//          return next(new ErrorResponse( error.message, 500));
-//      }  
-//      //return response
-//         res
-//         .status(200)
-//         .json({ success: true, statusCode: 200, message: ' resetPassword :))' , data: user});
+     try {
+         await sendEmail({
+            recipient: "natlisjo@gmailcom",// req.body.email,
+            subject: 'Password reset request',
+            message,
+         });
+     } catch (error) {        
+         return next(new ErrorResponse( error.message, 500));
+     }  
+     //return response
+        res
+        .status(200)
+        .json({ success: true, statusCode: 200, message: ' resetPassword :))' , data: user});
       
-// }
+} );
 
 
 
 
-// //@desc   reset password
-// //@route  PUT /api/v1/auth/reset-password/:token
-// //@access PUBLIC
-// export const resetPassword =async (req, res, next)=>{
+//@desc   reset password
+//@route  PUT /api/v1/auth/reset-password/:token
+//@access PUBLIC
+export const resetPassword =async (req, res, next)=>{
    
-//   try {
-//     const resetPasswordToken =req.params.token;
-//     const password = req.body.password;
+  try {
+    const resetPasswordToken =req.params.token;
+    const password = req.body.password;
 
-//     if (!resetPasswordToken || !password) {
-//         return next(new ErrorResponse(`missing required fields ${resetPasswordToken} or ${password}`, 400) );
-//     }
+    if (!resetPasswordToken || !password) {
+        return next(new ErrorResponse(`missing required fields ${resetPasswordToken} or ${password}`, 400) );
+    }
 
-//     // taken user from DB based on resetPasswordToken
-//     const user = await findUserByResetPasswordToken(resetPasswordToken);
-//     // generate new hashed password
-//     const hashedPassword = hashPassword(password);
-//     // update user new password
-//     user.password = hashedPassword;
-//     user.resetPasswordToken = null;
-//     user.resetPasswordTokenExpire = null;
+    // taken user from DB based on resetPasswordToken
+    const user = await findUserByResetPasswordToken(resetPasswordToken);
+    // generate new hashed password
+    const hashedPassword = hashPassword(password);
+    // update user new password
+    user.password = hashedPassword;
+    user.resetPasswordToken = null;
+    user.resetPasswordTokenExpire = null;
 
-//     // save user to DB
-//     await updateUser(user);
+    // save user to DB
+    await updateUser(user);
 
-//     // send response
-//     res
-//     .status(200)
-//     .json({ success: true, statusCode: 200, message: ' resetPassword success:))' , data: user});
-// }catch (error) {
-//     return next(new ErrorResponse( error.message, 500) );
-// }
+    // send response
+    res
+    .status(200)
+    .json({ success: true, statusCode: 200, message: ' resetPassword success:))' , data: user});
+}catch (error) {
+    return next(new ErrorResponse( error.message, 500) );
+}
 
-// }
+}
 
 
-// // @desc   logga ut
-// // @route  POST /api/v1/auth/logut
-// // @access Public
- 
-// export const logout = (req, res, next) => {
-//     res.send('logout');
-// }
+// @desc   logga ut
+// @route  POST /api/v1/auth/logut
+// @access Public 
+export const logout = (req, res, next) => {
+    res.send('logout');
+}
 
 
 
@@ -165,7 +154,7 @@ const createAndSendToken = (user, statusCode, res) => {
 // create token
     const token = user.getSignedJwtToken() ;
  
-//     // send response JWT 
+// send response JWT 
     res
         .status(statusCode)
         // .cookie('token', token, options)

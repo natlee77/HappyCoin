@@ -2731,4 +2731,66 @@ POST /api/v1/auth/login -
 POST /api/v1/auth/login - 
   2024-07-07 
   14:23:41
-  
+  POST /api/v1/auth/register 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 15:14:22
+POST /api/v1/auth/login 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 15:14:44
+POST /api/v1/auth/register 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 15:19:39
+POST /api/v1/auth/register 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 15:21:54
+POST /api/v1/auth/register 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 15:24:35
+POST /api/v1/auth/register 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 15:25:44
+POST /api/v1/auth/register 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 15:32:11
+POST /api/v1/auth/register 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 15:33:18
+POST /api/v1/auth/register 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 15:34:43
+POST /api/v1/auth/register 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 15:39:15
+POST /api/v1/auth/register 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 16:02:19
+POST /api/v1/auth/register 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 16:09:06
+POST /api/v1/auth/register 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 16:10:38
+PUT /api/v1/auth/reset-password/ec13fde36aa80d640218b4905e5b32465f808ef9cab56c189023e8c015686899 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-07- 16:22:57
+GET /api/v1/auth/me 
+   -   undefined    undefined  
+  2024-07-07- 16:23:13
+GET /api/v1/auth/me 
+   -   undefined    undefined  
+  2024-07-08- 12:43:07
+POST /api/v1/auth/login 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 12:48:29
+GET /api/v1/auth/me 
+   -   undefined    undefined  
+  2024-07-08- 12:48:34
+GET /api/v1/auth/me 
+   -   undefined    undefined  
+  2024-07-08- 12:54:07
+POST /api/v1/auth/login 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 12:54:15
+GET /api/v1/auth/me 
+   -   undefined    undefined  
+  2024-07-08- 12:54:18

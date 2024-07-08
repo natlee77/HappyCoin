@@ -17,7 +17,7 @@ import PubNubServer from './pubnub-server.mjs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import logger from './middleware/logger.mjs';
-import { errorHandler } from './middleware/errorHandler.mjs';
+import errorHandler  from './middleware/errorHandler.mjs';
 import logHandler from './middleware/logHandler.mjs';
 
 dotenv.config({ path: './config/config.env' });
@@ -83,7 +83,7 @@ app.all('*', (req, res, next) => {
 
 // Central felhantering...
 app.use(logHandler);
-//error handler-->efter router
+//error handler--> efter router
 app.use(errorHandler);
 //synchronize blockchain
 const synchronize = async () => {
