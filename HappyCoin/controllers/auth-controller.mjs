@@ -56,6 +56,57 @@ export const getMe = asyncHandler( async (req, res, next) => {
          return next(new ErrorResponse('User not found by id' ));
         }  
 });
+ 
+
+//@desc   uppdate user
+//@route  PUT /api/v1/auth/update-user
+//@access PRIVATE
+export const updateUser = asyncHandler( async (req, res, next) => {
+    const userDetailsUpdate = {
+    name: req.body.name,
+    email: req.body.email,    
+    }
+
+    const user = await User.findByIdAndUpdate(req.user.id, userDetailsUpdate, {
+        new: true,//return new user-ALL INFO
+        runValidators: true
+    });
+    res.status(204).json({
+        success: true,  
+        statusCode: 204, 
+        message: 'User updated successfully', 
+        data: user
+    })  
+}); 
+
+
+//@desc   update password
+//@route  PUT /api/v1/auth/update-password
+//@access PRIVATE
+export const  updatePassword = asyncHandler( async (req, res, next) => {
+    const user = await User.findById(req.user.id).select('+password');
+    if (!user) {
+        return next(new ErrorResponse('User not found by id' , 404) );
+       }
+
+    const isMatch = await user.matchPassword(req.body.currentPassword);
+    if (!isMatch) {
+        return  next (new ErrorResponse( 'Wrong password', 401) )
+    } 
+    user.password = req.body.newPassword;
+    await user.save();
+
+    res.status(204).json({
+        success: true,  
+
+        statusCode: 204, 
+        message: 'User password updated successfully', 
+        data: user
+    })  
+  
+    createAndSendToken(user, 200, res); 
+      
+} );
 
 
 
@@ -64,18 +115,19 @@ export const getMe = asyncHandler( async (req, res, next) => {
 //@access PUBLIC
 export const  forgotPassword = asyncHandler( async (req, res, next) => {
     const   email   = req.body.email;
-
     if (!email) {
         return next(new ErrorResponse(`missing required fields ${email}`, 400) );
     }
-    let user = await findUserByEmail(email);
-    
+
+    let user = await User.findOne( {email});  //mongoose find
     if (!user) {
             return next(new ErrorResponse( `User not found with this ${email} address.`, 404) );
     }
    
     //create reset token
-    user = await getResetPasswordToken(user.id);
+    const resetToken = user.createResetPasswordToken(); //method User-model
+    await user.save({ validateBeforeSave: false});
+
     //create URL for reset MSG
     const resetURL = `${req.protocol}://${req.get('host')}/api/v1/auth/reset-password/${user.resetPasswordToken}`;
                  console.log('resetURL:_______ ', resetURL);
@@ -85,23 +137,24 @@ export const  forgotPassword = asyncHandler( async (req, res, next) => {
      const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\n If you did not forget your password, please ignore this email!`
         
          
-     try {
-         await sendEmail({
-            recipient: "natlisjo@gmailcom",// req.body.email,
-            subject: 'Password reset request',
-            message,
-         });
-     } catch (error) {        
-         return next(new ErrorResponse( error.message, 500));
-     }  
+    //  try {
+    //      await sendEmail({
+    //         recipient: "natlisjo@gmailcom",// req.body.email,
+    //         subject: 'Password reset request',
+    //         message,
+    //      });
+    //  } catch (error) {        
+    //      return next(new ErrorResponse( error.message, 500));
+    //  }  
      //return response
         res
         .status(200)
-        .json({ success: true, statusCode: 200, message: ' resetPassword :))' , data: user});
+        .json({ success: true, 
+                statusCode: 200, 
+                message: ' resetPassword :))' , 
+                data: {token:resetToken, url: resetURL}});
       
 } );
-
-
 
 
 //@desc   reset password

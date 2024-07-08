@@ -8,7 +8,7 @@ const logger = (req, res, next) => {
   
 //____msg
   const message = `${req.method} ${req.originalUrl} 
-   -   ${req.headers['user-agent']}    ${res.message}  
+   -   ${req.headers['user-agent']}    
   ${new Date().toLocaleDateString('sv-SE')}- ${new Date().toLocaleTimeString('sv-SE')}\n`;
 
  

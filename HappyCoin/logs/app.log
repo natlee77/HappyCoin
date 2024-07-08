@@ -2794,3 +2794,51 @@ POST /api/v1/auth/login
 GET /api/v1/auth/me 
    -   undefined    undefined  
   2024-07-08- 12:54:18
+PUT /api/v1/auth/update-user/ 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 13:14:55
+PUT /api/v1/auth/update-user/ 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 13:15:16
+POST /api/v1/auth/login 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 13:15:24
+PUT /api/v1/auth/update-user/ 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 13:15:28
+PUT /api/v1/auth/update-user/ 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 13:15:43
+PUT /api/v1/auth/update-user/ 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 13:20:57
+PUT /api/v1/auth/update-user/ 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 13:22:42
+POST /api/v1/auth/login 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 13:43:53
+PUT /api/v1/auth/update-password/ 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 13:43:58
+POST /api/v1/auth/login 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 13:44:24
+POST /api/v1/auth/login 
+   -   PostmanRuntime/7.39.0    undefined  
+  2024-07-08- 13:44:35
+POST /api/v1/auth/login 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 17:44:32
+POST /api/v1/auth/login 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 17:45:04
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 17:45:15
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 17:48:04
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 17:48:32
