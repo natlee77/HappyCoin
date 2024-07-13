@@ -5,8 +5,10 @@ import  Miner from '../models/Miner.mjs';
 import { pubnubServer } from '../server.mjs';
 import Wallet from '../models/Wallet.mjs';
 import ErrorResponse from "../models/ErrorResponseModel.mjs";   
+import { asyncHandler } from "../middleware/asyncHandler.mjs";
+
 //________logic --> add , get
-export const addTransaction = (req, res, next) => {
+export const addTransaction =asyncHandler( async (req, res, next) => {
     const { recipient,amount } = req.body;
     //we need update transactions  if has already  -> get by id(pool-->transactionExists)
     let transaction = transactionPool.transactionExist({address: wallet.publicKey});
@@ -25,9 +27,9 @@ export const addTransaction = (req, res, next) => {
     pubnubServer.broadcastTransaction(transaction);
     res.status(201)
     .json({success: true,statusCode: 201,data: transaction});
-};
+});
 
-export const getWalletBalance = (req, res, next) => {
+export const getWalletBalance =asyncHandler( async (req, res, next) => {
     //wallet-address, calculate balance  
     const adress = wallet.publicKey;  
     const balance = Wallet.calculateBalance({
@@ -44,9 +46,9 @@ export const getWalletBalance = (req, res, next) => {
             data: { adress: adress, 
                     balance : balance} });
 
-}
+});
 
-export const getTransactionPool = (req, res, next) => {
+export const getTransactionPool = asyncHandler( async(req, res, next) => {
 
     res
         .status(200)
@@ -55,10 +57,10 @@ export const getTransactionPool = (req, res, next) => {
         });
 
 
-}
+});
 
 
-export const mineTransactions = (req, res, next) => {
+export const mineTransactions =asyncHandler( async (req, res, next) => {
     const miner  = new Miner({
       blockchain,
       transactionPool,
@@ -74,5 +76,5 @@ export const mineTransactions = (req, res, next) => {
       statusCode: 200,
       data: ' Transaction mined successfully',
     });
-  };
+  });
   

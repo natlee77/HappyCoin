@@ -2842,3 +2842,237 @@ POST /api/v1/auth/forgot-password
 POST /api/v1/auth/forgot-password 
    -   PostmanRuntime/7.39.0    
   2024-07-08- 17:48:32
+PUT /api/v1/auth/reset-password/844f4feae145fadf3bfa98c65a1319ab113cce55%20 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 17:59:19
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:00:06
+PUT /api/v1/auth/reset-password/a079de7f6c988f163abe0f9431bede32fd51325d 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:00:43
+PUT /api/v1/auth/reset-password/a079de7f6c988f163abe0f9431bede32fd51325d 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:01:26
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:03:32
+PUT /api/v1/auth/reset-password/ccdf754ab05ebb67db1f829d0ea14272c01f5084 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:03:49
+PUT /api/v1/auth/reset-password/ccdf754ab05ebb67db1f829d0ea14272c01f5084 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:04:06
+PUT /api/v1/auth/reset-password/8417ea6e60eb2a8778d9d24b121b03e12ec6071675755b149e5b0bb677cd1741 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:06:27
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:06:36
+PUT /api/v1/auth/reset-password/cf6716660d992386c417f8c8477ecc5890c54d910409366ba36a7787f80bee14 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:07:29
+PUT /api/v1/auth/reset-password/cf6716660d992386c417f8c8477ecc5890c54d910409366ba36a7787f80bee14 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:09:19
+POST /api/v1/auth/login 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:09:38
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:09:47
+PUT /api/v1/auth/reset-password/cf6716660d992386c417f8c8477ecc5890c54d910409366ba36a7787f80bee1457488faf717495cc7caa15d2ccc3adfa0a29fa0c8c018f8e8c67e6a63e20572c 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:10:34
+PUT /api/v1/auth/reset-password/57488faf717495cc7caa15d2ccc3adfa0a29fa0c8c018f8e8c67e6a63e20572c 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:11:48
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:14:15
+GET /api/v1/auth/reset-password/1064f02799885551c12776a805839f98d5ebe8c202a91b56bdc0ce3630a24fb0 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:14:43
+GET /api/v1/auth/reset-password/1064f02799885551c12776a805839f98d5ebe8c202a91b56bdc0ce3630a24fb0 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:15:16
+PUT /api/v1/auth/reset-password/1064f02799885551c12776a805839f98d5ebe8c202a91b56bdc0ce3630a24fb0 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:17:30
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:17:59
+PUT /api/v1/auth/reset-password/974cca7d9a37e1387821c08c510d93578646c717a9ea5628f76877fefd8a9c0b 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:18:22
+PUT /api/v1/auth/reset-password/974cca7d9a37e1387821c08c510d93578646c717a9ea5628f76877fefd8a9c0b 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:18:34
+PUT /api/v1/auth/reset-password/974cca7d9a37e1387821c08c510d93578646c717a9ea5628f76877fefd8a9c0b 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:18:44
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:19:37
+PUT /api/v1/auth/reset-password/974cca7d9a37e1387821c08c510d93578646c717a9ea5628f76877fefd8a9c0b 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:20:49
+PUT /api/v1/auth/reset-password/483973be6722a8c4b51663eedaf6e2c9a4b34f8c2a6a42449e3487f193d99b20 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:21:33
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:26:42
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:29:08
+PUT /api/v1/auth/reset-password/f983d871d2dfd6ea7c65421f8206d04436b2168ec900640f68a76baa3c776348 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:29:35
+PUT /api/v1/auth/reset-password/f983d871d2dfd6ea7c65421f8206d04436b2168ec900640f68a76baa3c776348 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:30:09
+POST /api/v1/auth/reset-password/f983d871d2dfd6ea7c65421f8206d04436b2168ec900640f68a76baa3c776348 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:31:32
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:31:42
+PUT /api/v1/auth/reset-password/e677a035cf7217f25e541945c36f14b12b0800cfdb583eb3422679d7d365d570 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:32:08
+POST /api/v1/auth/reset-password/e677a035cf7217f25e541945c36f14b12b0800cfdb583eb3422679d7d365d570 
+   -   PostmanRuntime/7.39.0    
+  2024-07-08- 18:32:17
+POST /api/v1/auth/reset-password/e677a035cf7217f25e541945c36f14b12b0800cfdb583eb3422679d7d365d570 
+   -   PostmanRuntime/7.39.0    
+  2024-07-10- 14:16:34
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-10- 14:16:48
+POST /api/v1/auth/reset-password/a152e31f20a2d43b2e0dadf88ef001897cdabd5ab2ef73d39d048d51c050b331 
+   -   PostmanRuntime/7.39.0    
+  2024-07-10- 14:17:17
+GET /api/v1/auth/reset-password/a152e31f20a2d43b2e0dadf88ef001897cdabd5ab2ef73d39d048d51c050b331 
+   -   PostmanRuntime/7.39.0    
+  2024-07-10- 14:17:32
+PUT /api/v1/auth/reset-password/a152e31f20a2d43b2e0dadf88ef001897cdabd5ab2ef73d39d048d51c050b331 
+   -   PostmanRuntime/7.39.0    
+  2024-07-10- 14:18:08
+POST /api/v1/auth/forgot-password 
+   -   PostmanRuntime/7.39.0    
+  2024-07-10- 14:24:35
+PUT /api/v1/auth/reset-password/12c769161faaf0c9f526be51ff8409c057e261495e06b8368d7a9339c5e0b640 
+   -   PostmanRuntime/7.39.0    
+  2024-07-10- 14:25:03
+POST /api/v1/block/mine 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 15:18:47
+POST /api/v1/block/mine 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 15:28:04
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 15:55:28
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 17:16:15
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 17:31:34
+POST /api/v1/block/mine 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 17:31:42
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 17:31:49
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 17:37:15
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 17:47:12
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 17:48:48
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 17:53:52
+POST /api/v1/block/mine 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 17:54:55
+POST /api/v1/block/mine 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:03:33
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:03:38
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:05:54
+POST /api/v1/block/mine 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:06:02
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:06:07
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:07:32
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:09:27
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:21:02
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:21:17
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:22:20
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:30:30
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:40:57
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:48:25
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:49:50
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:51:13
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:52:38
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:56:24
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:58:16
+POST /api/v1/block/mine 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:58:20
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 18:58:31
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 19:00:05
+POST /api/v1/block/mine 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 19:00:12
+GET /api/v1/blockchain 
+   -   PostmanRuntime/7.39.0    
+  2024-07-12- 19:00:17
+GET /api/v1/blockchain 
+   -   node    
+  2024-07-13- 14:55:14
+GET /api/v1/wallet/transactions 
+   -   node    
+  2024-07-13- 14:55:14

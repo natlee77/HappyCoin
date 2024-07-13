@@ -129,7 +129,7 @@ export const  forgotPassword = asyncHandler( async (req, res, next) => {
     await user.save({ validateBeforeSave: false});
 
     //create URL for reset MSG
-    const resetURL = `${req.protocol}://${req.get('host')}/api/v1/auth/reset-password/${user.resetPasswordToken}`;
+    const resetURL = `${req.protocol}://${req.get('host')}/api/v1/auth/reset-password/${resetToken}`;
                  console.log('resetURL:_______ ', resetURL);
                  
     //send email
@@ -160,37 +160,40 @@ export const  forgotPassword = asyncHandler( async (req, res, next) => {
 //@desc   reset password
 //@route  PUT /api/v1/auth/reset-password/:token
 //@access PUBLIC
-export const resetPassword =async (req, res, next)=>{
-   
-  try {
-    const resetPasswordToken =req.params.token;
+export const resetPassword = asyncHandler( async (req, res, next)=>{   
     const password = req.body.password;
+    const resetPasswordToken = req.params.token;
 
-    if (!resetPasswordToken || !password) {
-        return next(new ErrorResponse(`missing required fields ${resetPasswordToken} or ${password}`, 400) );
+    if ( !password) {
+        return next(new ErrorResponse(`missing required fields - ${resetPasswordToken} or ${password}`, 400) );
     }
 
     // taken user from DB based on resetPasswordToken
-    const user = await findUserByResetPasswordToken(resetPasswordToken);
-    // generate new hashed password
-    const hashedPassword = hashPassword(password);
-    // update user new password
-    user.password = hashedPassword;
+   let user = await User.findOne({ resetPasswordToken: resetPasswordToken }); 
+   
+    if (!user) {
+        return next(new ErrorResponse(`invalid token ${resetPasswordToken}`, 400) );
+    }
+    
+  
+    // update user new password       
+    user.password = password;
     user.resetPasswordToken = null;
     user.resetPasswordTokenExpire = null;
 
     // save user to DB
-    await updateUser(user);
-
+    await user.save();
+    createAndSendToken(user, 200, res);
+  
     // send response
     res
     .status(200)
-    .json({ success: true, statusCode: 200, message: ' resetPassword success:))' , data: user});
-}catch (error) {
-    return next(new ErrorResponse( error.message, 500) );
-}
-
-}
+    .json({ success: true, 
+            statusCode: 200, 
+            message: ' resetPassword success:))' , 
+            data: user});
+ 
+} );
 
 
 // @desc   logga ut

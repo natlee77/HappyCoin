@@ -18,7 +18,7 @@ import jwt from 'jsonwebtoken';
     },
     password: {
         type: String,
-        required: true ,
+        required:  [true, 'Please add a password'],
         minlength: 4,
         select : false
     },
@@ -36,7 +36,7 @@ import jwt from 'jsonwebtoken';
   });
 
   //hash password for MongoDB
-  userSchema.pre('save', async function(next) { 
+userSchema.pre('save', async function(next) { 
     if(!this.isModified('password')) {
         next();
     }//if update user 
@@ -65,10 +65,9 @@ userSchema.methods.createResetPasswordToken = function() {
         .update(resetToken)
         .digest('hex');
 
-    this.resetPasswordTokenExpire = Date.now() + 10 * (60 * 1000);
-    console.log('resetToken:_______ ', resetToken);
+    this.resetPasswordTokenExpire = new Date ( Date.now() + 10 * (60 * 1000)); 
   
-    return resetToken;
+    return this.resetPasswordToken;
 }
 
 export  default mongoose.model("User", userSchema);

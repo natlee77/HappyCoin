@@ -436,3 +436,171 @@ Method: POST
                    Time: 17:48:04
                    Success: true - 
                    Message: sendEmail is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/844f4feae145fadf3bfa98c65a1319ab113cce55%20 
+                   Date: 2024-07-08 
+                   Time: 17:59:19
+                   Success: false - 
+                   Message: invalid token 844f4feae145fadf3bfa98c65a1319ab113cce55 
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/a079de7f6c988f163abe0f9431bede32fd51325d 
+                   Date: 2024-07-08 
+                   Time: 18:00:44
+                   Success: false - 
+                   Message: invalid token a079de7f6c988f163abe0f9431bede32fd51325d
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/a079de7f6c988f163abe0f9431bede32fd51325d 
+                   Date: 2024-07-08 
+                   Time: 18:01:26
+                   Success: false - 
+                   Message: invalid token a079de7f6c988f163abe0f9431bede32fd51325d
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/ccdf754ab05ebb67db1f829d0ea14272c01f5084 
+                   Date: 2024-07-08 
+                   Time: 18:03:49
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/ccdf754ab05ebb67db1f829d0ea14272c01f5084 
+                   Date: 2024-07-08 
+                   Time: 18:04:06
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/8417ea6e60eb2a8778d9d24b121b03e12ec6071675755b149e5b0bb677cd1741 
+                   Date: 2024-07-08 
+                   Time: 18:06:27
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/cf6716660d992386c417f8c8477ecc5890c54d910409366ba36a7787f80bee14 
+                   Date: 2024-07-08 
+                   Time: 18:07:29
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/cf6716660d992386c417f8c8477ecc5890c54d910409366ba36a7787f80bee14 
+                   Date: 2024-07-08 
+                   Time: 18:09:19
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/cf6716660d992386c417f8c8477ecc5890c54d910409366ba36a7787f80bee1457488faf717495cc7caa15d2ccc3adfa0a29fa0c8c018f8e8c67e6a63e20572c 
+                   Date: 2024-07-08 
+                   Time: 18:10:34
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/57488faf717495cc7caa15d2ccc3adfa0a29fa0c8c018f8e8c67e6a63e20572c 
+                   Date: 2024-07-08 
+                   Time: 18:11:48
+                   Success: undefined - 
+                   Message: token is not defined
+Method: GET 
+                   Url: /api/v1/auth/reset-password/1064f02799885551c12776a805839f98d5ebe8c202a91b56bdc0ce3630a24fb0 
+                   Date: 2024-07-08 
+                   Time: 18:14:43
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/auth/reset-password/1064f02799885551c12776a805839f98d5ebe8c202a91b56bdc0ce3630a24fb0 
+                   Date: 2024-07-08 
+                   Time: 18:15:16
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/1064f02799885551c12776a805839f98d5ebe8c202a91b56bdc0ce3630a24fb0 
+                   Date: 2024-07-08 
+                   Time: 18:17:30
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/974cca7d9a37e1387821c08c510d93578646c717a9ea5628f76877fefd8a9c0b 
+                   Date: 2024-07-08 
+                   Time: 18:18:22
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/974cca7d9a37e1387821c08c510d93578646c717a9ea5628f76877fefd8a9c0b 
+                   Date: 2024-07-08 
+                   Time: 18:18:34
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/974cca7d9a37e1387821c08c510d93578646c717a9ea5628f76877fefd8a9c0b 
+                   Date: 2024-07-08 
+                   Time: 18:18:44
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/974cca7d9a37e1387821c08c510d93578646c717a9ea5628f76877fefd8a9c0b 
+                   Date: 2024-07-08 
+                   Time: 18:20:49
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/483973be6722a8c4b51663eedaf6e2c9a4b34f8c2a6a42449e3487f193d99b20 
+                   Date: 2024-07-08 
+                   Time: 18:21:33
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/f983d871d2dfd6ea7c65421f8206d04436b2168ec900640f68a76baa3c776348 
+                   Date: 2024-07-08 
+                   Time: 18:29:35
+                   Success: undefined - 
+                   Message: token is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/f983d871d2dfd6ea7c65421f8206d04436b2168ec900640f68a76baa3c776348 
+                   Date: 2024-07-08 
+                   Time: 18:30:09
+                   Success: undefined - 
+                   Message: token is not defined
+Method: POST 
+                   Url: /api/v1/auth/reset-password/f983d871d2dfd6ea7c65421f8206d04436b2168ec900640f68a76baa3c776348 
+                   Date: 2024-07-08 
+                   Time: 18:31:32
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/e677a035cf7217f25e541945c36f14b12b0800cfdb583eb3422679d7d365d570 
+                   Date: 2024-07-08 
+                   Time: 18:32:08
+                   Success: undefined - 
+                   Message: token is not defined
+Method: POST 
+                   Url: /api/v1/auth/reset-password/e677a035cf7217f25e541945c36f14b12b0800cfdb583eb3422679d7d365d570 
+                   Date: 2024-07-08 
+                   Time: 18:32:17
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/auth/reset-password/e677a035cf7217f25e541945c36f14b12b0800cfdb583eb3422679d7d365d570 
+                   Date: 2024-07-10 
+                   Time: 14:16:34
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/auth/reset-password/a152e31f20a2d43b2e0dadf88ef001897cdabd5ab2ef73d39d048d51c050b331 
+                   Date: 2024-07-10 
+                   Time: 14:17:17
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/auth/reset-password/a152e31f20a2d43b2e0dadf88ef001897cdabd5ab2ef73d39d048d51c050b331 
+                   Date: 2024-07-10 
+                   Time: 14:17:32
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: PUT 
+                   Url: /api/v1/auth/reset-password/12c769161faaf0c9f526be51ff8409c057e261495e06b8368d7a9339c5e0b640 
+                   Date: 2024-07-10 
+                   Time: 14:25:04
+                   Success: undefined - 
+                   Message: Cannot set headers after they are sent to the client
+Method: POST 
+                   Url: /api/v1/block/mine 
+                   Date: 2024-07-12 
+                   Time: 17:31:42
+                   Success: undefined - 
+                   Message: Block.mineBlock is not a function

@@ -1,11 +1,13 @@
 import { createHash } from '../utilities/crypto-lib.mjs';
 import Block from './Block.mjs';
+import Chain from './BlockchainMongo.mjs'
 import Transaction from './Transaction.mjs';
 import { MINING_REWARD, MINING_REWARD_ADRESS } from '../config/settings.mjs';
 
 export default class Blockchain {
   constructor() {
     this.chain = [Block.genesis];
+    this.updateChainMongoDB(this.chain);
   }
 
   // Instance method...
@@ -15,6 +17,7 @@ export default class Blockchain {
       data: data,
     });
     this.chain.push(newBlock);
+    this.updateChainMongoDB(this.chain);
     return newBlock;
   }
 
@@ -98,5 +101,24 @@ export default class Blockchain {
     }
 
     return true;
+  }
+
+  async updateChainMongoDB(newChain) {
+    try {
+      await Chain.deleteMany({});
+      const chainMongo = new Chain({ chain: newChain });
+      const result = await chainMongo.save();
+
+      console.log(
+        'Blockchain successfully updated in the database',
+        result
+      );
+    } catch (error) {
+      throw new ErrorResponse(
+        'Failed to update the blockchain in Mongo DB :(',
+        500,
+        error
+      );
+    }
   }
 }

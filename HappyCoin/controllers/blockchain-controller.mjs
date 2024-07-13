@@ -1,8 +1,9 @@
 import { blockchain } from '../server.mjs';
 import ErrorResponse
  from '../models/ErrorResponseModel.mjs';
+ import { asyncHandler } from "../middleware/asyncHandler.mjs";
 
-export const listBlock = (req, res, next) => {
+export const listBlock =asyncHandler(async (req, res, next) => {
   if (blockchain.chain.length === 0) {
     return next(
       new ErrorResponse('There are no blocks in the blockchain', 404)
@@ -13,4 +14,4 @@ export const listBlock = (req, res, next) => {
       .json({ success: true, statusCode: 200, data: blockchain.chain });
   }
   
-};
+});
