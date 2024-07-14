@@ -27,9 +27,9 @@ async get(resourse) {
         throw new Error(`Error in  get(): ${error.message}`);
       }
     }
-//metod post
+//metod post  
 async add(obj) {   
-  console.log(' added_______ ',obj);  
+   
   try {
       const response = await fetch(this.#url , {
         //post metod--create packet
@@ -54,5 +54,27 @@ async add(obj) {
     
   }
 }
+async loginRequest(email, password)   {
+  try {
+    const response = await fetch(this.#url , {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    if (response.ok) {
+      const result = await response.json();
+    
+       return result;
+  } else {
+    throw new Error(`${response.status} ${response.statusText}`);
+  }
+} catch (error) {
+  throw new Error(`Error in add metod : ${error}`);  
+}
+   
+};
  
 }

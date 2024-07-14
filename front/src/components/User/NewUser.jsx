@@ -7,7 +7,7 @@ import User from "../../models/User";
 import Name from "./Name";
 import Password from "./Password";
 import Email from "./Email";
-// import Role from "./Role";
+  import Role from "./Role";
 
 
 
@@ -19,8 +19,7 @@ function NewUser() {
    const [name, setName] = useState('');
    const [password, setPassword] = useState('');
    const [email, setEmail] = useState('');
-
-
+   
 const createUser = async (e) => {
     e.preventDefault()
    
@@ -29,17 +28,20 @@ const newUser = new User(
         name,
         email,          
         password,
+        role
        );  
     
 const check = newUser.getValidation()        
 if(check.validated) {
       saveUser (newUser);
       setUser(newUser);
+      
  }
  else {
    // alert(check.msg)
    setError(check)
  }
+
 };
 // send user  to blockchain
 async function saveUser(obj) {
@@ -69,6 +71,7 @@ const toggleError = () => {
               <Name updateName={setName} />
               <Password updatePassword={setPassword}  />
               <Email updateEmail={setEmail} />
+              <Role updateRole={setRole} />
             </div>            
                
             <button  className="btn" type="submit" onClick = {

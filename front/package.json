@@ -10,14 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-  
     "hex-to-binary": "^1.0.1",
     "react": "^18.2.0",
     "react-router-dom": "^6.23.1",
+    "react-select": "^5.8.0",
     "sass": "^1.74.1",
-    "update": "^0.7.4" ,
+    "update": "^0.7.4",
     "uuid": "^9.0.1"
-    
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
@@ -29,7 +28,6 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "vite": "^5.0.8"
   },
-  
   "author": "Nataliya Lisjö, Maria Vaverova",
   "license": "ISC"
 }

@@ -604,3 +604,51 @@ Method: POST
                    Time: 17:31:42
                    Success: undefined - 
                    Message: Block.mineBlock is not a function
+Method: POST 
+                   Url: /api/v1/auth/register 
+                   Date: 2024-07-14 
+                   Time: 10:25:23
+                   Success: undefined - 
+                   Message: E11000 duplicate key error collection: happycoin.users index: email_1 dup key: { email: "test@gmail.com" }
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-14 
+                   Time: 10:59:12
+                   Success: false - 
+                   Message: missing required fields undefined, undefined
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-14 
+                   Time: 11:05:56
+                   Success: undefined - 
+                   Message: Unexpected token '"', ""natlisjo@gmail.com"" is not valid JSON
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-14 
+                   Time: 11:06:46
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-14 
+                   Time: 11:06:54
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-14 
+                   Time: 11:07:45
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-14 
+                   Time: 11:07:55
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-14 
+                   Time: 11:31:48
+                   Success: false - 
+                   Message: missing required fields , 

@@ -1,19 +1,33 @@
- function  Role({ updateRole }) {
-  const handleChange = (e) => {
-    updateRole(e.target.value);
-  };    
+ import { useState} from "react";
+ import Select from "react-select"
+ 
+ function Role({
+   updateRole
+ }) {
+   const options = [
+    {value : "user", label : 'user'},
+    {value : "miner",  label : 'miner' },
+    {value : "admin",   label : 'admin'},
+   ]
+   const [selectedOption, setSelectedOption] = useState("");
 
-  return (
-    <div>
-      <input
-        className="data"
-        type="text"
-        name="text"
-        placeholder=" Write your role."
-        onChange={handleChange}
-      />
-    </div>
-  );
-}
+   const handleChange = (e) => {
+    console.log(selectedOption);
+    setSelectedOption(selectedOption.value);
+     updateRole(selectedOption.value);
+   };
 
-export default Role;
+   return ( <
+     div > 
+         <Select   options={options}
+               onChange={handleChange}
+             />  
+     
+ 
+
+
+     </div>
+   );
+ }
+
+ export default Role;
