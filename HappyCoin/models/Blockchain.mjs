@@ -116,9 +116,7 @@ export default class Blockchain {
     } catch (error) {
       throw new ErrorResponse(
         'Failed to update the blockchain in Mongo DB :(',
-        500,
-        error
-      );
+        500 );
     }
   }
 }

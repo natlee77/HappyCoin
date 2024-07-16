@@ -17,7 +17,7 @@ const BlockChain = () => {
         const http = new HttpClient();
         const result = await http.get('api/v1/blockchain');
         //http://localhost:5001/api/v1/blockchain
-        // console.log(result.data );
+        console.log(result  );
 
         setBlockchain(result.data );
        setTransactions(result.data.data);
