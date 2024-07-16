@@ -1,6 +1,7 @@
 import { useState} from "react"; 
  import Transaction from "../../models/Transaction";
  import HttpClient from "../../service/http";
+ import { jwtDecode } from "jwt-decode";
 
 import Sender from "./Sender";
 import Recipient from "./Recipient";
@@ -18,11 +19,21 @@ import Error from "../Tools/Error";
   const createOrder = async (e) => {
          e.preventDefault()
         
+      const token = JSON.parse(localStorage.getItem('Bearer'));
+      const decoded = jwtDecode(token);
+      console.log('id______-', decoded.id);
+      
+      console.log('exp______',decoded.exp);
+      //should be check on EXP token
+      if (!token){
+        location.href = './login'   
+      }
+      else{
       //  create new object(transaction)
      const newOrder = new Transaction(
             Number(amount),
             sender,
-            recipient);  
+            recipient);   
           
     const check = newOrder.getValidation()        
     if(check.validated) {
@@ -35,6 +46,7 @@ import Error from "../Tools/Error";
         // alert(check.msg)
         setError(check)
       }
+    }
      };
      //send transaction to blockchain
     async function saveTransaction(obj) {

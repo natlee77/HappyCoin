@@ -1,7 +1,7 @@
 import {useState} from "react";
 import HttpClient from "../service/http";
 import Error from "../components/Tools/Error";
- 
+import { jwtDecode } from "jwt-decode";
 import Password from "../components/User/Password";
 import Email from "../components/User/Email";
 
@@ -14,17 +14,34 @@ const Login = () => {
     e.preventDefault() ; 
  
     const response = await loginToAccount(email,password);    
-    console.log('response___________-', response);    
-    const token = JSON.stringify(response.token);   
+      
+    const token = JSON.stringify(response.token); 
     localStorage.setItem('Bearer', token);
-     // redirect
-     location.href = './send'
+
+    const decoded = jwtDecode(token);
+    const userExp=  decoded.exp;
+    
+    const user= await getUserRole(token) ;
+    if (user.role === 'user'){
+      // redirect
+       location.href = './send'
+    }else{
+       location.href = './mine'
+    }
+      
+    
   }
   async function loginToAccount( email,password ){
     const url = 'http://localhost:5001/api/v1/auth/login';
     const http = new HttpClient(url);
-    return  await http.loginRequest( email,password );
+    return  await http.loginRequest( email,password );   
+  }
+  async function getUserRole( token){
+    const url = 'http://localhost:5001/api/v1/auth/me';
+    const http = new HttpClient(url);
    
+    const user= await http.getUser(token); 
+    return  user;
   }
   //_____________  
   return <>

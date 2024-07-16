@@ -67,7 +67,7 @@ export const mineTransactions =asyncHandler( async (req, res, next) => {
       wallet, 
       pubnub: pubnubServer,
     });
-  console.log('--------miner-----', miner );
+ 
   
     miner.mine(); 
     

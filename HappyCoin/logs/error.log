@@ -652,3 +652,267 @@ Method: POST
                    Time: 11:31:48
                    Success: false - 
                    Message: missing required fields , 
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-14 
+                   Time: 14:24:32
+                   Success: false - 
+                   Message:  access denied - no token provided
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-14 
+                   Time: 14:34:48
+                   Success: undefined - 
+                   Message: invalid token
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-14 
+                   Time: 14:38:10
+                   Success: undefined - 
+                   Message: invalid token
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-14 
+                   Time: 14:39:59
+                   Success: false - 
+                   Message: User not found
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-14 
+                   Time: 14:41:36
+                   Success: false - 
+                   Message: User not found
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-14 
+                   Time: 14:42:14
+                   Success: false - 
+                   Message: User not found
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-14 
+                   Time: 14:42:41
+                   Success: false - 
+                   Message: User not found
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-14 
+                   Time: 14:43:15
+                   Success: undefined - 
+                   Message: invalid token
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-14 
+                   Time: 14:45:03
+                   Success: undefined - 
+                   Message: invalid token
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-14 
+                   Time: 14:45:51
+                   Success: undefined - 
+                   Message: invalid token
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-14 
+                   Time: 14:46:55
+                   Success: undefined - 
+                   Message: invalid token
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-14 
+                   Time: 14:47:30
+                   Success: undefined - 
+                   Message: jwt malformed
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-14 
+                   Time: 14:47:41
+                   Success: undefined - 
+                   Message: invalid token
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-14 
+                   Time: 14:47:53
+                   Success: undefined - 
+                   Message: jwt malformed
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-14 
+                   Time: 14:47:59
+                   Success: undefined - 
+                   Message: invalid token
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-14 
+                   Time: 14:55:41
+                   Success: false - 
+                   Message:  access denied - no token provided
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-16 
+                   Time: 11:18:08
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-16 
+                   Time: 11:18:15
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-16 
+                   Time: 11:18:39
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-16 
+                   Time: 11:18:47
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-16 
+                   Time: 11:18:57
+                   Success: false - 
+                   Message: Wrong password
+Method: GET 
+                   Url: /api/v1/auth/reset-password/8f44f6059b6031459ca931c17c0043eb86ffca3ffd3caa8a039c54433ce12d22 
+                   Date: 2024-07-16 
+                   Time: 11:20:06
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-16 
+                   Time: 11:21:17
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/wallet/mine 
+                   Date: 2024-07-16 
+                   Time: 11:26:08
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/wallet/mine 
+                   Date: 2024-07-16 
+                   Time: 12:06:04
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/wallet/mine 
+                   Date: 2024-07-16 
+                   Time: 12:06:55
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: POST 
+                   Url: /api/v1/wallet/mine 
+                   Date: 2024-07-16 
+                   Time: 12:07:20
+                   Success: undefined - 
+                   Message: ErrorResponse is not defined
+Method: GET 
+                   Url: /api/v1/wallet/mine 
+                   Date: 2024-07-16 
+                   Time: 12:07:31
+                   Success: undefined - 
+                   Message: Invalid count value: -1
+Method: GET 
+                   Url: /api/v1/wallet/mine 
+                   Date: 2024-07-16 
+                   Time: 12:07:37
+                   Success: undefined - 
+                   Message: Invalid count value: -1
+Method: POST 
+                   Url: /api/v1/wallet/transaction 
+                   Date: 2024-07-16 
+                   Time: 15:39:33
+                   Success: false - 
+                   Message: false
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-16 
+                   Time: 16:18:00
+                   Success: undefined - 
+                   Message: jwt malformed
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-16 
+                   Time: 16:19:43
+                   Success: undefined - 
+                   Message: jwt malformed
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-16 
+                   Time: 16:20:24
+                   Success: undefined - 
+                   Message: invalid token
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-16 
+                   Time: 16:26:29
+                   Success: undefined - 
+                   Message: jwt malformed
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-16 
+                   Time: 16:27:52
+                   Success: undefined - 
+                   Message: jwt malformed
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-16 
+                   Time: 16:33:11
+                   Success: undefined - 
+                   Message: invalid token
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-16 
+                   Time: 16:40:46
+                   Success: undefined - 
+                   Message: invalid token
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-16 
+                   Time: 16:42:21
+                   Success: undefined - 
+                   Message: invalid token
+Method: GET 
+                   Url: /api/v1/auth/me 
+                   Date: 2024-07-16 
+                   Time: 16:43:16
+                   Success: undefined - 
+                   Message: invalid token
+Method: GET 
+                   Url: /api/v1/wallet/mine 
+                   Date: 2024-07-16 
+                   Time: 18:13:53
+                   Success: undefined - 
+                   Message: jwt malformed
+Method: GET 
+                   Url: /api/v1/wallet/mine 
+                   Date: 2024-07-16 
+                   Time: 18:39:38
+                   Success: undefined - 
+                   Message: Invalid count value: -1
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-16 
+                   Time: 18:41:45
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-16 
+                   Time: 18:44:04
+                   Success: false - 
+                   Message: Wrong password
+Method: POST 
+                   Url: /api/v1/auth/login 
+                   Date: 2024-07-16 
+                   Time: 18:44:24
+                   Success: false - 
+                   Message: Wrong password

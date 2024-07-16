@@ -21,10 +21,7 @@
      div > 
          <Select   options={options}
                onChange={handleChange}
-             />  
-     
- 
-
+             />   
 
      </div>
    );
