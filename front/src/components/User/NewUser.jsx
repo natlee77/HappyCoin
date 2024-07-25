@@ -23,13 +23,14 @@ function NewUser() {
 const createUser = async (e) => {
     e.preventDefault()
    
- //  create new object(transaction)
+ //  create new object(user)
 const newUser = new User(
         name,
         email,          
         password,
         role
        );  
+  console.log('new user____', newUser);
     
 const check = newUser.getValidation()        
 if(check.validated) {

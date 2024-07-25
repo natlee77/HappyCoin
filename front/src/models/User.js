@@ -2,11 +2,11 @@ import {   validateString } from '../service/validate';
 
 export default class User {
     #validator = {validated: true, msg: []}
-    constructor(name, email, password ) {
+    constructor(name, email, password, role ) {
         this.name = name;   
         this.email = email;
         this.password = password;
-        // this.role = role;
+        this.role = role;
         this.validateOrder( )
     }
     validateOrder(check   ) {     
@@ -16,9 +16,11 @@ export default class User {
         console.log(checkedEmail);
         const checkedPassword = validateString( this.password)
         console.log(checkedPassword);
+        const checkedRole = validateString(this.role)
+        console.log(checkedRole);
  
- 
-        if(checkedName !== true || checkedEmail !== true ||   checkedPassword !== true) 
+        if(checkedName !== true || checkedEmail !== true ||   checkedPassword !== true || checkedRole !== true) 
+     
          {        
              this.#validator.validated = false,
              this.#validator.id = this.id
@@ -31,6 +33,9 @@ export default class User {
           }
           if(typeof checkedPassword === 'string') {
            this.#validator.msg.push(checkedPassword)
+          }
+          if(typeof checkedRole === "string"){
+            this.#validator.msg.push(checkedRole)
           }
           
        }  

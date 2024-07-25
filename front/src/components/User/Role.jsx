@@ -7,14 +7,14 @@
    const options = [
     {value : "user", label : 'user'},
     {value : "miner",  label : 'miner' },
-    {value : "admin",   label : 'admin'},
+    
    ]
    const [selectedOption, setSelectedOption] = useState("");
 
-   const handleChange = (e) => {
-    console.log(selectedOption);
+   const handleChange = (selectedOption) => {
+    console.log("user", selectedOption);
     setSelectedOption(selectedOption.value);
-     updateRole(selectedOption.value);
+     updateRole(selectedOption);
    };
 
    return ( <

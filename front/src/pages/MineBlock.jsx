@@ -16,6 +16,7 @@ import { jwtDecode } from "jwt-decode";
       }
       else{
        await mineRequest(token);
+       location.href = './blockchain' 
       }
     }
    async function mineRequest(token){
