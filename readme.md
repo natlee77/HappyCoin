@@ -24,9 +24,4 @@ The client application can create:
 - new transactions,
 - list transactions  and list blocks.
 - it is possible to create a block of transactions, i.e. "mine" of blocks.
-
-#### _______Passed Requirement (Good)
-All of the above must be in place for the grade G.
-#### _______Passed (VeryGood)
-For VG, TDD must be used for transaction management. All "Best practices" that we went through during the course must be used. That is, Clean Code, SOC, MVC.
-In addition, the server must be secure against various types of attacks, for example NoSqlinjections, DDOS and XSS attempts.
+ 
